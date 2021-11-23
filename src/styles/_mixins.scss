@@ -1,0 +1,23 @@
+/* BUTTONS */
+@mixin button {
+  border-radius: $border-radius-small;
+  display: inline-block;
+  margin: .5rem;
+  text-decoration: none;
+  font-weight: 550;
+  background: $blue;
+  padding: $button-padding;
+  color: $white;
+  cursor: pointer;
+  &.secondary {
+    background: $light-gray;
+  }
+  &:hover {
+    color: $lighter-gray;
+  }
+  
+}
+
+.button {
+  @include button;
+}

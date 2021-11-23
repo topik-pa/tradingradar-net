@@ -1,0 +1,33 @@
+//WORDS
+@font-face {
+  font-family: HelveticaNeueLight;
+  font-weight: 200;
+  src: local('HelveticaNeueLight'), url('~@/assets/fonts/HelveticaNeueLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: HelveticaNeueLight;
+  font-weight: 400;
+  src: local('HelveticaNeueLight'), url("~@/assets/fonts/HelveticaNeueRegular.ttf") format('truetype');
+}
+@font-face {
+  font-family: HelveticaNeueLight;
+  font-weight: 550;
+  src: local('HelveticaNeueLight'), url('~@/assets/fonts/HelveticaNeueMedium.ttf') format('truetype');
+}
+@font-face {
+  font-family: HelveticaNeueLight;
+  font-weight: 700;
+  src: local('HelveticaNeueLight'), url('~@/assets/fonts/HelveticaNeueBold.ttf') format('truetype');
+}
+//ICONS
+@font-face {
+  font-family: 'icomoon';
+  src:  url('~@/assets/fonts/icons/icomoon.eot');
+  src:  url('~@/assets/fonts/icons/icomoon.eot#iefix') format('embedded-opentype'),
+    url('~@/assets/fonts/icons/icomoon.ttf') format('truetype'),
+    url('~@/assets/fonts/icons/icomoon.woff') format('woff'),
+    url('~@/assets/fonts/icons/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
