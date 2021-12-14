@@ -28,11 +28,13 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 nav a {
-  margin-right: 1rem;
+  margin-left: 3rem;
+  font-weight: 550;
 }
 .icon-menu {
   display: none;
   font-size: 2.5rem;
+  color: $black;
 }
 @media screen and (max-width: 768px) {
   nav {
@@ -43,11 +45,10 @@ nav a {
     background: $darker-gray;
       a {
         display: block;
-        padding: 1.5rem;
-        font-weight: bold;
-        font-size: $font-size-big;
+        padding: 1rem;
+        font-weight: 550;
         border-bottom: 1px solid $black;
-        margin-right: 0;
+        margin: 0;
       }
     }
   .icon-menu {

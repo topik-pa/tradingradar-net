@@ -1,8 +1,7 @@
 <template>
   <CmpHeader />
-  <div class="view home">
-    <CmpApiStocks />
-    <CmpApiStock />
+  <div class="view api">
+    api: {{ api }}
   </div>
   <CmpFooter />
 </template>
@@ -10,28 +9,24 @@
 <script>
 import CmpHeader from '@/components/shared/CmpHeader'
 import CmpFooter from '@/components/shared/CmpFooter'
-import CmpApiStocks from '@/components/CmpApiStocks'
-import CmpApiStock from '@/components/CmpApiStock'
 
 export default {
   name: 'Home',
   components: {
     CmpHeader,
-    CmpFooter,
-    CmpApiStocks,
-    CmpApiStock
+    CmpFooter
   },
   data () {
-    return {}
-  },
-  mounted () {
-    window.scrollTo(0, 0)
+    return {
+      api: this.$route.params.id
+    }
   }
 }
 </script>
 
 <style scoped lang="scss">
 section {
-  margin-bottom: 4rem;
+  width: 100%;
+  margin-bottom: 10rem;
 }
 </style>

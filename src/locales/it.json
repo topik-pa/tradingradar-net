@@ -1,13 +1,109 @@
 {
   "hello": "ciao mondo",
+  "source": "Fonte",
+  "features": "Funzionalità",
+  "ftseMib": "ftse MIB",
+  "performance": "Performance",
+  "dividend": "Dividendi",
+  "minMax": "Minimi e massimi",
+  "average": "Medie mobili0",
+  "continue": "[Continua]",
+  "pressRel": "Rassegna stampa",
   "menu": {
-    "guide": "Guida",
+    "home": "Home",
+    "about": "About",
     "widgets": "Widget",
-    "concepts": "Concetti"
+    "concepts": "Concetti",
+    "privacy": "Privacy"
   },
   "cookie": {
     "title": "Questa applicazione Web utilizza i cookie",
     "text": "Questo sito o gli strumenti di terze parti in esso integrati fanno uso di cookie necessari per il funzionamento e per il raggiungimento delle finalità descritte nella cookie policy. Per saperne di più o per revocare il consenso relativamente a uno o tutti i cookie, fai riferimento alla cookie policy. Dichiari di accettare l’utilizzo di cookie chiudendo o nascondendo questo banner, cliccando un link o un pulsante o continuando a navigare in altro modo. Per ulteriori informazioni è possibile visitare la pagina privacy policy",
     "agree": "Accetto"
+  },
+  "api": {
+    "moreInfo": "Più informazioni",
+    "stocks": {
+      "feature1": "Dati aggiornati su base giornaliera",
+      "feature2": "Valori ordinabili (descrescenti/descrescenti)",
+      "feature3": "Filtri (maggiore/minore)",
+      "feature4": "Paginazione",
+      "volatility": {
+        "param": "volatility",
+        "key": "volatility",
+        "label": "Volatility",
+        "subtitle": "Una API per otterene statistiche dai mercati",
+        "title": "*Volatilità*",
+        "desc": "*description*",
+        "url": "/api/stocks/volatility",
+        "source": "*Il sole 24*"
+      },
+      "perf1M": {
+        "param": "perf1M",
+        "key": "perf1M",
+        "label": "Performance 1M",
+        "subtitle": "Una API per otterene statistiche dai mercati",
+        "title": "*perf1M*",
+        "desc": "*description*",
+        "url": "/api/stocks/perf1M",
+        "source": "*Il sole 24*"
+      },
+      "perf6M": {
+        "param": "perf6M",
+        "key": "perf6M",
+        "label": "Performance 6M",
+        "subtitle": "Una API per otterene statistiche dai mercati",
+        "title": "*perf6M*",
+        "desc": "*description*",
+        "url": "/api/stocks/perf6M",
+        "source": "*Il sole 24*"
+      },
+      "perf1Y": {
+        "param": "perf1Y",
+        "key": "perf1Y",
+        "label": "Performance 1Y",
+        "subtitle": "Una API per otterene statistiche dai mercati",
+        "title": "*perf1Y*",
+        "desc": "*description*",
+        "url": "/api/stocks/perf1Y",
+        "source": "*Il sole 24*"
+      },
+      "rsi": {
+        "param": "rsi",
+        "key": "milFin_rsi",
+        "label": "RSI",
+        "subtitle": "Una API per otterene statistiche dai mercati",
+        "title": "*RSI*",
+        "desc": "*description*",
+        "url": "/api/stocks/rsi",
+        "source": "*Il sole 24*"
+      },
+      "mfRisk": {
+        "param": "risk",
+        "key": "milFin_mfRisk",
+        "label": "MF Risk",
+        "subtitle": "Una API per otterene statistiche dai mercati",
+        "title": "*risk*",
+        "desc": "*description*",
+        "url": "/api/stocks/risk",
+        "source": "*Il sole 24*"
+      }
+    },
+    "stock": {
+      "info": {
+        "title": "*Info api*",
+        "subtitle": "*Una API per otterene info real-time su una azione*",
+        "url": "/api/stock/info/[ISIN]",
+        "desc": "Ottieni info....",
+        "infoUrl": "#"
+      },
+      "analysis": {
+        "title": "*Analisi api*",
+        "subtitle": "*Una API per otterene analisi real-time su una azione*",
+        "url": "/api/stock/analysis/[ISIN]",
+        "desc": "Ottieni analisi....",
+        "infoUrl": "#"
+      }
+    }
   }
 }

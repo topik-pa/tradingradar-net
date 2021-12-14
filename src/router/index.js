@@ -8,6 +8,16 @@ const routes = [
     component: Home
   },
   {
+    path: '/stock/:isin',
+    name: 'Stock',
+    component: () => import(/* webpackChunkName: "stock" */ '../views/Stock.vue')
+  },
+  {
+    path: '/api/:id',
+    name: 'Api',
+    component: () => import(/* webpackChunkName: "api" */ '../views/Api.vue')
+  },
+  {
     path: '/about',
     name: 'About',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
@@ -15,7 +25,7 @@ const routes = [
   {
     path: '/privacy',
     name: 'Privacy',
-    component: () => import(/* webpackChunkName: "concepts" */ '../views/Privacy.vue')
+    component: () => import(/* webpackChunkName: "privacy" */ '../views/Privacy.vue')
   }
 ]
 

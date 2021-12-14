@@ -25,8 +25,9 @@ const getLocalMessages = function () {
 
 // Configure i18n
 const i18n = createI18n({
-  locale: navigator.language === 'it-IT' ? 'it' : 'en',
-  fallbackLocale: 'en',
+  // locale: navigator.language === 'it-IT' ? 'it' : 'en',
+  locale: 'it',
+  fallbackLocale: 'it',
   messages: getLocalMessages()
 })
 
