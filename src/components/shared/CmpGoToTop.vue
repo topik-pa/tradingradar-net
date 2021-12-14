@@ -37,9 +37,11 @@ div {
   bottom: 0;
   right: 0;
   background-color: $blue;
+  color: $white;
   border-radius: $border-radius-small;
-  padding: 1rem;
-  margin: 1rem;
+  padding: .8rem;
+  margin: .8rem;
   cursor: pointer;
+  font-size: $font-size-big;
 }
 </style>

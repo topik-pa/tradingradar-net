@@ -18,17 +18,12 @@ const state = {
     {
       name: 'Facebook',
       url: 'https://www.facebook.com',
-      class: 'icon-facebook-with-circle'
+      class: 'icon-facebook2'
     },
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com',
-      class: 'icon-linkedin-with-circle'
-    },
-    {
-      name: 'YouTube',
-      url: 'https://www.youtube.com',
-      class: 'icon-youtube-with-circle'
+      class: 'icon-linkedin'
     }
   ]
 }

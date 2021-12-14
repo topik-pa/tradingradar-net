@@ -1,16 +1,7 @@
 <template>
   <footer>
-    <div class="social">
-      <a v-for="social in socials" :key="social.name" :href="social.url" class="icon" :class="social.name.toLowerCase()">
-       <i :class="social.class"></i>
-      </a >
-    </div>
     <div class="copy">
       {{project.name}} &copy; {{project.copyright}} {{author}}
-    </div>
-    <div>
-      <router-link :to="{name: 'About'}">{{$t('menu.about')}}</router-link>
-      <router-link :to="{name: 'Privacy'}">{{$t('menu.privacy')}}</router-link>
     </div>
   </footer>
 </template>
@@ -35,6 +26,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 footer {
+  color: $white;
   background-color: $black;
   display: flex;
   justify-content: space-around;

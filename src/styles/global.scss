@@ -1,12 +1,11 @@
 body {
-  font-family: HelveticaNeueLight, Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-shadow:0 0 1px transparent;
   text-rendering: optimizeLegibility;
   letter-spacing: .03rem;
-  background-color: $darkest-gray;
-  color: $white;
+  color: $black;
 }
 
 #app {
@@ -20,10 +19,8 @@ a {
 
 /*The header is fixed, so we need to adjust the view position on top (if the header is visible)*/
 .view {
-  padding: 0 $view-padding;
+  /*padding: 0 $view-padding;*/
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   &.login {
     margin-top:0;
@@ -42,7 +39,7 @@ a {
   }  
 }
 
-input {
+/*input {
   outline: none;
 }
 input[type=text], input[type=email], input[type=password], input[type=tel] {
@@ -62,9 +59,18 @@ input[type=text], input[type=email], input[type=password], input[type=tel] {
 input[disabled] {
   color: $gray;
   background-color: $darkest-gray;
+}*/
+
+small {
+  font-size: 50%;
+  display: block;
 }
 
-table {
+strong {
+  font-weight: bold;
+}
+
+/*table {
   border-collapse: collapse;
   font-weight: lighter;
 }
@@ -78,4 +84,4 @@ table th, table td {
 table tr:nth-child(even){background-color: $darker-gray;}
 table th {
   text-align: left;
-}
+}*/
