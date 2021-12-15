@@ -1,4 +1,4 @@
-const apiEndpoint = process.env.VUE_APP_API_ENDPOINT
+const apiEndpoint = process.env.API_ENDPOINT
 
 export const settings = {
   apiEndpoint
