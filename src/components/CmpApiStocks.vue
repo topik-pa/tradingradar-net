@@ -206,7 +206,7 @@ export default {
   }
   &_head_left {
     width: 75%;
-    margin: 7rem 5rem 3rem 5rem;
+    margin: 5rem 5rem 3rem 5rem;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 1rem;
     border-bottom: 1px solid white;
@@ -220,7 +220,7 @@ export default {
   &_head_right {
     width: 25%;
     background: rgba(0, 0, 0, 0.8);
-    padding: 5rem 5rem 3rem 5rem;
+    padding: 4rem 4rem 2rem 4rem;
     ul {
       list-style: inside;
       li {
@@ -230,6 +230,7 @@ export default {
   }
   &_body {
     background-color: rgba(255,255,255,0.4);
+    padding: 0 1rem;
   }
   &_list {
     display: flex;
@@ -238,6 +239,8 @@ export default {
       text-align: center;
       width: 15%;
       background: white;
+      height: 18.4rem;
+      overflow: auto;
       &.active {
         border: 1px solid $light-gray;
         border-top: none;

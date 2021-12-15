@@ -163,7 +163,7 @@ export default {
     },
     getStockAnalysis () {
       this.analisys.status = 'loading'
-      fetch('http://localhost:8080/api/analysis/' + this.isin, {
+      fetch(`${settings.apiEndpoint}/api/analysis/` + this.isin, {
         method: 'GET'
       })
         .then(response => {
@@ -181,7 +181,7 @@ export default {
     },
     getStockNews () {
       this.news.status = 'loading'
-      fetch('http://localhost:8080/api/news/' + this.isin, {
+      fetch(`${settings.apiEndpoint}/api/news/` + this.isin, {
         method: 'GET'
       })
         .then(response => {

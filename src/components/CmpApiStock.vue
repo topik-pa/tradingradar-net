@@ -114,7 +114,7 @@ export default {
 .stock-list {
   width: 60%;
   margin: 0 auto;
-  min-height: 20rem;
+  min-height: 15rem;
   border-bottom: 1px solid $light-gray;
   overflow-y: auto;
   div {
