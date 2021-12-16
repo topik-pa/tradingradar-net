@@ -2,21 +2,33 @@
   <section class="api stock">
     <div class="banners">
       <div class="banner">
-        <h3>{{ $t('api.stock.info.title') }}</h3>
-          <h2>{{ $t('api.stock.info.title') }}</h2>
-          <p class="url">{{ $t('api.stock.info.url') }}</p>
-          <p class="desc">{{ $t('api.stock.info.desc') }}</p>
-          <router-link class="button primary" :to="{name: 'Api', params: {id: 'info'}}">{{$t('api.moreInfo')}}</router-link>      </div>
+        <h3 v-html="$t('api.stock.info.subtitle')"></h3>
+        <h2 v-html="$t('api.stock.info.title')"></h2>
+        <p class="url">{{ $t('api.stock.info.url') }}</p>
+        <p v-html="$t('api.stock.info.desc')" class="desc"></p>
+        <!--<router-link class="button primary" :to="{name: 'Api', params: {id: 'info'}}">{{$t('api.moreInfo')}}</router-link>-->
+        <a class="button primary" href="https://rapidapi.com/marcopavan.mp@gmail.com/api/tradingradar" target="_blank" rel="noopener noreferrer">{{$t('api.moreInfo')}}</a>
+      </div>
       <div class="banner">
-        <h3>{{ $t('api.stock.analysis.title') }}</h3>
-          <h2>{{ $t('api.stock.analysis.title') }}</h2>
-          <p class="url">{{ $t('api.stock.analysis.url') }}</p>
-          <p class="desc">{{ $t('api.stock.analysis.desc') }}</p>
-          <router-link class="button primary" :to="{name: 'Api', params: {id: 'analysis'}}">{{$t('api.moreInfo')}}</router-link>
+        <h3 v-html="$t('api.stock.analysis.subtitle')"></h3>
+        <h2 v-html="$t('api.stock.analysis.title')"></h2>
+        <p class="url">{{ $t('api.stock.analysis.url') }}</p>
+        <p v-html="$t('api.stock.analysis.desc')" class="desc"></p>
+        <!--<router-link class="button primary" :to="{name: 'Api', params: {id: 'analysis'}}">{{$t('api.moreInfo')}}</router-link>-->
+        <a class="button primary" href="https://rapidapi.com/marcopavan.mp@gmail.com/api/tradingradar" target="_blank" rel="noopener noreferrer">{{$t('api.moreInfo')}}</a>
+      </div>
+      <div class="banner">
+        <h3 v-html="$t('api.stock.news.subtitle')"></h3>
+        <h2 v-html="$t('api.stock.news.title')"></h2>
+        <p class="url">{{ $t('api.stock.news.url') }}</p>
+        <p v-html="$t('api.stock.news.desc')" class="desc"></p>
+        <!--<router-link class="button primary" :to="{name: 'Api', params: {id: 'analysis'}}">{{$t('api.moreInfo')}}</router-link>-->
+        <a class="button primary" href="https://rapidapi.com/marcopavan.mp@gmail.com/api/tradingradar" target="_blank" rel="noopener noreferrer">{{$t('api.moreInfo')}}</a>
       </div>
     </div>
-    <div class="alphabet">
-      <h2>{{ $t('ftseMib') }}</h2>
+    <div class="alphabet" id="alphabet">
+      <h2>{{ $t('api.selectTitle') }}</h2>
+      <h3>{{ $t('api.selectTitleSub') }}</h3>
       <span v-for="letter in alphabet" :key="letter" @click="filterStockeByLetter(letter)">
         {{ letter }}
       </span>
@@ -73,14 +85,15 @@ export default {
 <style scoped lang="scss">
 .banners {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-wrap: wrap;
   align-items: stretch;
   background-size: cover;
   background-position: center;
   background-image: url(~@/assets/images/banner-2.jpeg);
 }
 .banner {
-  width: 50%;
+  width: 40%;
   margin: 3rem 5rem 3rem 5rem;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 1rem;
@@ -88,14 +101,26 @@ export default {
   color: $white;
   p {
     margin: 1.2rem 0;
+    line-height: 140%;
     &.url {
       font-family: monospace;
+      background: $black;
+      display: inline;
+      padding: .3rem 1rem;
+      border: 1px solid $gray;
     }
   }
 }
 .alphabet {
   margin: 3rem 0 1rem;
   text-align: center;
+  h2 {
+    margin: 0;
+  }
+  h3 {
+    margin-bottom: 2rem;
+    margin-top: .3rem;
+  }
   span {
     display: inline-block;
     margin: 0 0.3rem;

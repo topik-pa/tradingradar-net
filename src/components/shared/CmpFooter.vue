@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="copy">
-      {{project.name}} &copy; {{project.copyright}} {{author}}
+      {{project.name}} &copy; {{project.copyright}} <a :href="`mailto:${author.email}`">{{ author.name }} {{ author.surname }}</a>
     </div>
   </footer>
 </template>
@@ -14,7 +14,7 @@ export default {
       return this.$store.getters.getProject
     },
     author () {
-      return `${this.$store.getters.getAuthor.name} ${this.$store.getters.getAuthor.surname}`
+      return this.$store.getters.getAuthor
     },
     socials () {
       return this.$store.getters.getSocials
@@ -33,6 +33,7 @@ footer {
   align-items: center;
   padding: .5rem;
   a {
+    color: $white;
     margin: 0 .5rem;
     &.icon {
       font-size: 2rem;

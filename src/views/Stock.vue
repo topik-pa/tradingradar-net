@@ -10,44 +10,44 @@
       <div class="info">
         <img :src="require(`@/assets/images/dividend.jpg`)" :alt="$t('dividend')">
         <div class="content">
-          <h3>Dividendi</h3>
-          <p>Div. Yield (%): <span>{{ info.data.divYield?.value }}</span></p>
-          <p>Valore dividendo (€): <span>{{ info.data.lastDiv?.value }}</span></p>
-          <p>Data ultimo: <span>{{ info.data.lastDivDate?.value }}</span></p>
-        </div>
-      </div>
-      <div class="info">
-        <img :src="require(`@/assets/images/minmax.jpg`)" :alt="$t('minMax')">
-        <div class="content">
-          <h3>Massimi e minimi</h3>
-          <p>Media 20 gg: <span>{{ info.data.mm20days?.value }}</span></p>
-          <p>Media 40 gg: <span>{{ info.data.mm40days?.value }}</span></p>
-          <p>Media 100 gg: <span>{{ info.data.mm100days?.value }}</span></p>
+          <h3>{{ $t('dividend') }} <small>({{ $t('from') }} <a :href="info.data.divYield?.source" target="_blank" rel="noopener noreferrer">{{ $t('mFinanza') }}</a>)</small></h3>
+          <p>{{ $t('divYield') }}<span>{{ info.data.divYield?.value }}</span></p>
+          <p>{{ $t('divVal') }}<span>{{ info.data.lastDiv?.value }}</span></p>
+          <p>{{ $t('divLast') }}<span>{{ info.data.lastDivDate?.value }}</span></p>
         </div>
       </div>
       <div class="info">
         <img :src="require(`@/assets/images/average.jpg`)" :alt="$t('average')">
         <div class="content">
-          <h3>Medie mobili</h3>
-          <p>Massimo assoluto: <span>{{ info.data.absMax?.value }}</span></p>
-          <p>Minimo assoluto: <span>{{ info.data.absMin?.value }}</span></p>
-          <p>Massimo anno corrente: <span>{{ info.data.currentYearMax?.value }}</span></p>
-          <p>Minimo anno corrente: <span>{{ info.data.currentYearMin?.value }}</span></p>
+          <h3>{{ $t('average') }} <small>({{ $t('from') }} <a :href="info.data.mm20days?.source" target="_blank" rel="noopener noreferrer">{{ $t('sol24') }}</a>)</small></h3>
+          <p>{{ $t('mm20') }}<span>{{ info.data.mm20days?.value }}</span></p>
+          <p>{{ $t('mm40') }}<span>{{ info.data.mm40days?.value }}</span></p>
+          <p>{{ $t('mm100') }}<span>{{ info.data.mm100days?.value }}</span></p>
+        </div>
+      </div>
+      <div class="info">
+        <img :src="require(`@/assets/images/minmax.jpg`)" :alt="$t('minMax')">
+        <div class="content">
+          <h3>{{ $t('minMax') }} <small>({{ $t('from') }} <a :href="info.data.absMax?.source" target="_blank" rel="noopener noreferrer">{{ $t('sol') }}</a>)</small></h3>
+          <p>{{ $t('absMax') }}<span>{{ info.data.absMax?.value }}</span></p>
+          <p>{{ $t('absMin') }}<span>{{ info.data.absMin?.value }}</span></p>
+          <p>{{ $t('yMax') }}<span>{{ info.data.currentYearMax?.value }}</span></p>
+          <p>{{ $t('yMin') }}<span>{{ info.data.currentYearMin?.value }}</span></p>
         </div>
       </div>
       <div class="info">
         <img :src="require(`@/assets/images/performance.jpg`)" :alt="$t('performance')">
         <div class="content">
-          <h3>Performance</h3>
-          <p>Performance (1 mese):  <span>{{ info.data.perf1M?.value }}</span></p>
-          <p>Performance (6 mesi):<span>{{ info.data.perf6M?.value }}</span></p>
-          <p>Performance (1 anno): <span>{{ info.data.perf1Y?.value }}</span></p>
-          <p>Volatilità:  <span>{{ info.data.volatility?.value }}</span></p>
+          <h3>{{ $t('performance') }} <small>({{ $t('from') }}<a :href="info.data.perf1M?.source" target="_blank" rel="noopener noreferrer">{{ $t('borsaItaliana') }}</a>)</small></h3>
+          <p>{{ $t('perf1M') }}<span>{{ info.data.perf1M?.value }}</span></p>
+          <p>{{ $t('perf6M') }}<span>{{ info.data.perf6M?.value }}</span></p>
+          <p>{{ $t('perf1Y') }}<span>{{ info.data.perf1Y?.value }}</span></p>
+          <p>{{ $t('volatility') }} <span>{{ info.data.volatility?.value }}</span></p>
         </div>
       </div>
       <div class="info">
         <div class="content">
-          <h3>Profilo</h3>
+          <h3>{{ $t('profile') }}</h3>
           <p>{{ info.data.profile?.value }}
             <a :href="info.data.profile?.source" :title="$t('continue')">{{ $t('continue') }}</a>
           </p>
@@ -55,7 +55,7 @@
       </div>
       <div class="info">
         <div class="content">
-          <h3>Commenti</h3>
+          <h3>{{ $t('comments') }}</h3>
           <p>{{ info.data.comment?.value }}
             <a :href="info.data.comment?.source" :title="$t('continue')">{{ $t('continue') }}</a>
           </p>
@@ -65,39 +65,39 @@
 
     <section class="analisys" :class="analisys.status">
       <div class="source borsaIt">
-        <h3><a :href="analisys.data.borsaIt_support?.source">Borsa Italiana</a></h3>
+        <h3><a :href="analisys.data.borsaIt_support?.source">{{ $t('borsaItaliana') }}</a></h3>
         <ul>
-          <li>Supporto: <strong>{{ analisys.data.borsaIt_support?.value }}</strong></li>
-          <li>Resistenza: <strong>{{ analisys.data.borsaIt_resistance?.value }}</strong></li>
-          <li>RSI: <strong>{{ analisys.data.borsaIt_rsi?.value }}</strong></li>
-          <li>Valutazione: <strong>{{ analisys.data.borsaIt_evaluation?.value }}</strong>
+          <li>{{ $t('support') }}: <strong>{{ analisys.data.borsaIt_support?.value }}</strong></li>
+          <li>{{ $t('resistance') }}: <strong>{{ analisys.data.borsaIt_resistance?.value }}</strong></li>
+          <li>{{ $t('rsi') }}: <strong>{{ analisys.data.borsaIt_rsi?.value }}</strong></li>
+          <li>{{ $t('evaluation') }}: <strong>{{ analisys.data.borsaIt_evaluation?.value }}</strong>
           <br>
           <a :href="analisys.data.borsaIt_evaluation?.source" :title="$t('continue')">{{ $t('continue') }}</a>
           </li>
-          <li>Rating: <strong>{{ analisys.data.borsaIt_rating?.value }}</strong></li>
+          <li>{{ $t('rating') }}: <strong>{{ analisys.data.borsaIt_rating?.value }}<small>/4</small></strong></li>
         </ul>
       </div>
       <div class="source sol24">
-        <h3><a :href="analisys.data.sol24_shortTendency?.source ">Il Sole 24 Ore</a></h3>
+        <h3><a :href="analisys.data.sol24_shortTendency?.source ">{{ $t('sol24') }}</a></h3>
         <ul>
-          <li>Tendenza a breve termine: <strong>{{ analisys.data.sol24_shortTendency?.value }}</strong></li>
-          <li>Tendenza a medio termine: <strong>{{ analisys.data.sol24_mediumTendency?.value }}</strong></li>
+          <li>{{ $t('shortTendency') }}: <strong>{{ analisys.data.sol24_shortTendency?.value }}</strong></li>
+          <li>{{ $t('mediumTendency') }}: <strong>{{ analisys.data.sol24_mediumTendency?.value }}</strong></li>
         </ul>
       </div>
       <div class="source milFin">
-        <h3><a :href="analisys.data.milFin_mfRanking?.source ">Milano Finanza</a></h3>
+        <h3><a :href="analisys.data.milFin_mfRanking?.source ">{{ $t('mFinanza') }}</a></h3>
         <ul>
-          <li>Rating: <strong>{{ analisys.data.milFin_mfRanking?.value }}</strong></li>
-          <li>Risk: <strong>{{ analisys.data.milFin_mfRisk?.value }}</strong></li>
-          <li>RSI: <strong>{{ analisys.data.milFin_rsi?.value }}</strong></li>
+          <li>{{ $t('ratingEdges') }}: <strong>{{ analisys.data.milFin_mfRanking?.value }}</strong></li>
+          <li>{{ $t('riskEdges') }}: <strong>{{ analisys.data.milFin_mfRisk?.value }}</strong></li>
+          <li>{{ $t('rsi') }}: <strong>{{ analisys.data.milFin_rsi?.value }}</strong></li>
         </ul>
       </div>
       <div class="source teleb">
-        <h3><a :href="analisys.data.teleb_support?.source ">Teleborsa</a></h3>
+        <h3><a :href="analisys.data.teleb_support?.source ">{{ $t('teleB') }}</a></h3>
         <ul>
-          <li>Supporto: <strong>{{ analisys.data.teleb_support?.value }}</strong></li>
-          <li>Resistenza: <strong>{{ analisys.data.teleb_resistance?.value }}</strong></li>
-          <li>Trend: <strong>{{ analisys.data.teleb_trend?.value }}</strong>
+          <li>{{ $t('support') }}: <strong>{{ analisys.data.teleb_support?.value }}</strong></li>
+          <li>{{ $t('resistance') }}: <strong>{{ analisys.data.teleb_resistance?.value }}</strong></li>
+          <li>{{ $t('trend') }}: <strong>{{ analisys.data.teleb_trend?.value }}</strong>
           <br>
           <a :href="analisys.data.teleb_trend?.source" :title="$t('continue')">{{ $t('continue') }}</a>
           </li>
@@ -106,9 +106,9 @@
     </section>
 
     <section class="news" :class="news.status">
-      <h2>{{ $t('pressRel') }}</h2>
+      <h2>{{ $t('pressRel') }} {{ info.data.name }} </h2>
       <div v-for="(item, i) in news.data" :key="i" class="news-item">
-        <h3><a :href="item.url" :title="item.title ">{{ item.title }}</a></h3>
+        <h3><a target="_blank" rel="noopener noreferrer" :href="item.url" :title="item.title ">{{ item.title }}</a></h3>
       </div>
     </section>
   </div>
@@ -245,8 +245,11 @@ export default {
         font-weight: 550;
       }
       p {
-        margin-bottom: .5rem;
+        padding: .3rem;
         line-height: 140%;
+        &:nth-child(even) {
+          background-color: rgba(0, 0, 0, 0.1)
+        }
       }
     }
   }

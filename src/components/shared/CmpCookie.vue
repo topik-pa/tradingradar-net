@@ -59,6 +59,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 section {
+  color: $white;
   background-color: $black;
   padding: 1rem;
   line-height: 1.3rem;
