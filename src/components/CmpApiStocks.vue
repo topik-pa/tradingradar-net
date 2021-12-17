@@ -32,7 +32,7 @@
           <h3 @click="gotToStockAPI(obj.id)">{{ $t(`api.stocks.${obj.name}.label`) }}</h3>
           <div v-for="stock in obj.stocks" :key="stock.isin" class="stocks_listitem">
             <router-link :to="{name: 'Stock', params: {isin: stock.isin}}">{{ stock.name }}</router-link>
-            <span>{{ stock[obj.key].value }}</span>
+            <span>{{ stock[obj.key]?.value }}</span>
           </div>
         </div>
       </div>
@@ -93,7 +93,7 @@ export default {
         {
           id: 4,
           name: 'rsi',
-          key: 'milFin_rsi',
+          key: 'rsi',
           label: 'RSI',
           maxResults: 5,
           status: 'idle',

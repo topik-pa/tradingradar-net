@@ -89,7 +89,7 @@
         <ul>
           <li>{{ $t('ratingEdges') }}: <strong>{{ analisys.data.milFin_mfRanking?.value }}</strong></li>
           <li>{{ $t('riskEdges') }}: <strong>{{ analisys.data.milFin_mfRisk?.value }}</strong></li>
-          <li>{{ $t('rsi') }}: <strong>{{ analisys.data.milFin_rsi?.value }}</strong></li>
+          <li>{{ $t('rsi') }}: <strong>{{ analisys.data.milFin_mfRsi?.value }}</strong></li>
         </ul>
       </div>
       <div class="source teleb">
