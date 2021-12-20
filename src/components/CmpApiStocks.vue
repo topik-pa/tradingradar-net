@@ -131,7 +131,8 @@ export default {
           maxResults: 5,
           status: 'idle',
           source: 'milanoFinanza',
-          stocks: []
+          stocks: [],
+          order: 'asc'
         },
         {
           id: 9,
@@ -176,32 +177,52 @@ export default {
       this.selectedAPI = this.api[this.selectedApiIndex]
       this.api[this.selectedApiIndex].active = true
     },
-    getStocksAnalysis (num = 5) {
-      for (let i = 0; i < this.api.length; i++) {
-        const api = this.api[i]
-        api.status = 'loading'
-        fetch(`${settings.apiEndpoint}/api/stocks/${api.name}?order=desc`, {
-          method: 'GET'
+    getStocksAnalysis (index = 0) {
+      const api = this.api[index]
+      if (!api) return
+      api.status = 'loading'
+      const order = api.order || 'desc'
+      fetch(`${settings.apiEndpoint}/api/stocks/${api.name}?order=${order}`, {
+        method: 'GET'
+      })
+        .then(response => {
+          return response.json()
         })
-          .then(response => {
-            return response.json()
-          })
-          .then(data => {
-            api.stocks = data
-            api.status = 'success'
-          })
-          .catch(err => {
-            console.error(err)
-            api.status = 'error'
-          })
-      }
+        .then(data => {
+          api.stocks = data
+          api.status = 'success'
+        })
+        .catch(err => {
+          console.error(err)
+          api.status = 'error'
+        })
+        .finally(() => {
+          this.getStocksAnalysis(++index)
+        })
+    },
+    testAPI () {
+      console.log('test...')
+      fetch('https://tradingradar.p.rapidapi.com/api/stocks/volatility?order=asc&gt=20&lt=60&page=1&size=10', {
+        method: 'GET',
+        headers: {
+          'x-rapidapi-host': 'tradingradar.p.rapidapi.com',
+          'x-rapidapi-key': '6965655703msh02735e44f5b67cbp1a58a9jsnf9ea9589d31b'
+        }
+      })
+        .then(response => {
+          console.log(response)
+        })
+        .catch(err => {
+          console.error(err)
+        })
     }
   },
   beforeMount () {
-    this.getStocksAnalysis()
+    this.getStocksAnalysis(0)
     this.selectedApiIndex = 0
     this.selectedAPI = this.api[this.selectedApiIndex]
     this.apiLenght = this.api.length
+    // this.testAPI()
   }
 }
 </script>
@@ -298,8 +319,6 @@ export default {
       text-align: center;
       width: 18%;
       background: white;
-      height: 18.4rem;
-      overflow: auto;
       margin: 0 1rem 1rem;
       &.active {
         border: 1px solid $light-gray;
@@ -323,10 +342,6 @@ export default {
           color: $white;
         }
       }
-      &_list_wrap {
-        height: 18.4rem;
-        overflow: auto;
-      }
     }
   }
   &_arrows {
@@ -348,6 +363,10 @@ export default {
     &:nth-child(odd) {
       background-color: $blue20perc;
     }
+  }
+  &_list_wrap {
+    height: 18.4rem;
+    overflow: auto;
   }
 }
 </style>
