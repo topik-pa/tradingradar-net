@@ -199,22 +199,6 @@ export default {
         .finally(() => {
           this.getStocksAnalysis(++index)
         })
-    },
-    testAPI () {
-      console.log('test...')
-      fetch('https://tradingradar.p.rapidapi.com/api/stocks/volatility?order=asc&gt=20&lt=60&page=1&size=10', {
-        method: 'GET',
-        headers: {
-          'x-rapidapi-host': 'tradingradar.p.rapidapi.com',
-          'x-rapidapi-key': '6965655703msh02735e44f5b67cbp1a58a9jsnf9ea9589d31b'
-        }
-      })
-        .then(response => {
-          console.log(response)
-        })
-        .catch(err => {
-          console.error(err)
-        })
     }
   },
   beforeMount () {
@@ -222,7 +206,6 @@ export default {
     this.selectedApiIndex = 0
     this.selectedAPI = this.api[this.selectedApiIndex]
     this.apiLenght = this.api.length
-    // this.testAPI()
   }
 }
 </script>
