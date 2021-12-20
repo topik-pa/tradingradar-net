@@ -26,7 +26,7 @@
   "evaluation": "Valutazione",
   "rating": "Rating",
   "mediumTendency": "Tendenza medio periodo",
-  "shortTendency": "Tendenza breve perioo",
+  "shortTendency": "Tendenza breve periodo",
   "trend": "Trend",
   "profile": "Profilo",
   "minMax": "Minimi e massimi",
@@ -99,7 +99,7 @@
       "volatility": {
         "param": "volatility",
         "key": "volatility",
-        "label": "Volatility",
+        "label": "Volatilità",
         "subtitle": "Una <abbr title='Application Program Interface'>API</abbr> per interrogare i principali media online ed ottenere statistiche dai mercati",
         "title": "<strong>Volatilità</strong> dei titoli del ftse MIB",
         "desc": "Ottieni i valori di <strong>volatilità</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
@@ -109,12 +109,23 @@
       },
       "rsi": {
         "param": "rsi",
-        "key": "milFin_rsi",
+        "key": "borsaIt_rsi",
         "label": "RSI",
-        "subtitle": "Crea la tua pagina o applicazione Web con i dati messi a disposizione delle nostre <abbr title='Application Program Interface'>API</abbr> ",
+        "subtitle": "Crea la tua pagina o applicazione Web con i dati messi a disposizione delle nostre <abbr title='Application Program Interface'>API</abbr>",
         "title": "<strong><abbr title='Relative Strength Index'>RSI</abbr></strong> dei titoli del ftse MIB",
         "desc": "Ottieni i valori di <strong>RSI</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
         "url": "/api/stocks/rsi",
+        "source": "Borsa Italiana",
+        "sourceUrl": "https://www.borsaitaliana.it/homepage/homepage.htm"
+      },
+      "rating": {
+        "param": "rating",
+        "key": "borsaIt_rating",
+        "label": "Rating",
+        "subtitle": "*Crea la tua pagina o applicazione Web con i dati messi a disposizione delle nostre <abbr title='Application Program Interface'>API</abbr>*",
+        "title": "*<strong><abbr title='Relative Strength Index'>RSI</abbr></strong> dei titoli del ftse MIB*",
+        "desc": "*Ottieni i valori di <strong>RSI</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione*",
+        "url": "/api/stocks/rating",
         "source": "Borsa Italiana",
         "sourceUrl": "https://www.borsaitaliana.it/homepage/homepage.htm"
       },
@@ -126,6 +137,39 @@
         "title": "<strong>Indice di rischio</strong> dei titoli del ftse MIB",
         "desc": "Ottieni i valori di <strong>rischio</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
         "url": "/api/stocks/risk",
+        "source": "Milano Finanza",
+        "sourceUrl": "https://www.milanofinanza.it"
+      },
+      "mfRsi": {
+        "param": "mfRsi",
+        "key": "milFin_rsi",
+        "label": "MF RSI",
+        "subtitle": "Crea la tua pagina o applicazione Web con i dati messi a disposizione delle nostre <abbr title='Application Program Interface'>API</abbr>",
+        "title": "<strong>Indice RSI da Milano Finanza</strong> dei titoli del ftse MIB",
+        "desc": "Il <strong>Relative Strength Index</strong> espresso dagli analisti di Milano Finanza<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
+        "url": "/api/stocks/mfRsi",
+        "source": "Milano Finanza",
+        "sourceUrl": "https://www.milanofinanza.it"
+      },
+      "mfRanking": {
+        "param": "mfRanking",
+        "key": "milFin_mfRanking",
+        "label": "MF Ranking",
+        "subtitle": "*Crea la tua pagina o applicazione Web con i dati messi a disposizione delle nostre <abbr title='Application Program Interface'>API</abbr>*",
+        "title": "*<strong>Indice RSI da Milano Finanza</strong> dei titoli del ftse MIB*",
+        "desc": "*Il <strong>Relative Strength Index</strong> espresso dagli analisti di Milano Finanza<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione*",
+        "url": "/api/stocks/mfRanking",
+        "source": "Milano Finanza",
+        "sourceUrl": "https://www.milanofinanza.it"
+      },
+      "divYield": {
+        "param": "divYield",
+        "key": "divYield",
+        "label": "Dividendo (%)",
+        "subtitle": "Una <abbr title='Application Program Interface'>API</abbr> per interrogare i principali media online ed ottenere statistiche dai mercati",
+        "title": "Il <strong>valore del dividendo</strong> espresso in percentuale sul prezzo corrente",
+        "desc": "Quale è il titolo che paga <strong>il dividendo maggiore</strong> in relazione al valore delle sue azioni?.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
+        "url": "/api/stocks/divYield",
         "source": "Milano Finanza",
         "sourceUrl": "https://www.milanofinanza.it"
       }

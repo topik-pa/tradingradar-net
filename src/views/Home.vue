@@ -1,8 +1,8 @@
 <template>
   <CmpHeader />
   <div class="view home">
-    <CmpApiStocks />
-    <CmpApiStock />
+    <CmpApiStock/>
+    <CmpApiStocks/>
   </div>
   <CmpFooter />
 </template>
@@ -32,6 +32,6 @@ export default {
 
 <style scoped lang="scss">
 section {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 </style>

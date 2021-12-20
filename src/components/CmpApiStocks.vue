@@ -6,8 +6,8 @@
         <h2 v-html="$t(`api.stocks.${selectedAPI.name}.title`)"></h2>
         <p class="url">{{ $t(`api.stocks.${selectedAPI.name}.url`) }}</p>
         <p v-html="$t(`api.stocks.${selectedAPI.name}.desc`)" class="desc"></p>
-        <!--<router-link class="button primary" :to="{name: 'Api', params: {id: selectedAPI.name}}">{{$t('api.moreInfo')}}</router-link>-->
-        <a class="button primary" href="https://rapidapi.com/marcopavan.mp@gmail.com/api/tradingradar" target="_blank" rel="noopener noreferrer">{{$t('api.moreInfo')}}</a>
+        <!--<router-link class="button secondary" :to="{name: 'Api', params: {id: selectedAPI.name}}">{{$t('api.moreInfo')}}</router-link>-->
+        <a class="button secondary" href="https://rapidapi.com/marcopavan.mp@gmail.com/api/tradingradar" target="_blank" rel="noopener noreferrer">{{$t('api.moreInfo')}}</a>
         <div class="stocks_arrows">
           <span @click="prevStocksAPI">&#8592;</span>
           <span @click="nextStocksAPI">&#8594;</span>
@@ -30,9 +30,11 @@
       <div class="stocks_list">
         <div v-for="obj in api" :key="obj.id" :class="[{'active': obj.active}, obj.status]">
           <h3 @click="gotToStockAPI(obj.id)">{{ $t(`api.stocks.${obj.name}.label`) }}</h3>
-          <div v-for="stock in obj.stocks" :key="stock.isin" class="stocks_listitem">
-            <router-link :to="{name: 'Stock', params: {isin: stock.isin}}">{{ stock.name }}</router-link>
-            <span>{{ stock[obj.key]?.value }}</span>
+          <div class="stocks_list_wrap">
+            <div v-for="stock in obj.stocks" :key="stock.isin" class="stocks_listitem">
+              <router-link :to="{name: 'Stock', params: {isin: stock.isin}}">{{ stock.name }}</router-link>
+              <span>{{ stock[obj.key]?.value }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -53,7 +55,6 @@ export default {
           id: 0,
           name: 'perf1M',
           key: 'perf1M',
-          label: 'Performance1M',
           maxResults: 5,
           status: 'idle',
           source: 'borsaItaliana',
@@ -64,7 +65,6 @@ export default {
           id: 1,
           name: 'perf6M',
           key: 'perf6M',
-          label: 'Performance6M',
           maxResults: 5,
           status: 'idle',
           source: 'borsaItaliana',
@@ -74,7 +74,6 @@ export default {
           id: 2,
           name: 'perf1Y',
           key: 'perf1Y',
-          label: 'Performance1Y',
           maxResults: 5,
           status: 'idle',
           source: 'borsaItaliana',
@@ -84,7 +83,6 @@ export default {
           id: 3,
           name: 'volatility',
           key: 'volatility',
-          label: 'Volatility',
           maxResults: 5,
           status: 'idle',
           source: 'borsaItaliana',
@@ -93,8 +91,7 @@ export default {
         {
           id: 4,
           name: 'rsi',
-          key: 'rsi',
-          label: 'RSI',
+          key: 'borsaIt_rsi',
           maxResults: 5,
           status: 'idle',
           source: 'borsaItaliana',
@@ -102,9 +99,44 @@ export default {
         },
         {
           id: 5,
+          name: 'rating',
+          key: 'borsaIt_rating',
+          maxResults: 5,
+          status: 'idle',
+          source: 'borsaItaliana',
+          stocks: []
+        },
+        {
+          id: 6,
           name: 'mfRisk',
           key: 'milFin_mfRisk',
-          label: 'Risk',
+          maxResults: 5,
+          status: 'idle',
+          source: 'milanoFinanza',
+          stocks: []
+        },
+        {
+          id: 7,
+          name: 'mfRsi',
+          key: 'milFin_rsi',
+          maxResults: 5,
+          status: 'idle',
+          source: 'milanoFinanza',
+          stocks: []
+        },
+        {
+          id: 8,
+          name: 'mfRanking',
+          key: 'milFin_mfRanking',
+          maxResults: 5,
+          status: 'idle',
+          source: 'milanoFinanza',
+          stocks: []
+        },
+        {
+          id: 9,
+          name: 'divYield',
+          key: 'divYield',
           maxResults: 5,
           status: 'idle',
           source: 'milanoFinanza',
@@ -176,27 +208,39 @@ export default {
 
 <style scoped lang="scss">
 .stocks {
-  background-size: 120%;
+  background-size: cover;
   background-image: url(~@/assets/images/stocks-bg-min.jpg);
   background-repeat: no-repeat;
   transition: background-position .3s ease-out;
   &.perf1M {
-    background-position: 0% 50%;
+    background-position: 0% 0%;
   }
   &.perf6M {
-    background-position: 20% 50%;
+    background-position: 10% 0%;
   }
   &.perf1Y {
-    background-position: 40% 50%;
+    background-position: 20% 0%;
   }
   &.volatility {
-    background-position: 60% 50%;
+    background-position: 30% 0%;
   }
   &.rsi {
-    background-position: 80% 50%;
+    background-position: 40% 0%;
+  }
+  &.rating {
+    background-position: 50% 0%;
   }
   &.mfRisk {
-    background-position: 100% 50%;
+    background-position: 60% 0%;
+  }
+  &.mfRsi {
+    background-position: 70% 0%;
+  }
+  &.mfRanking {
+    background-position: 80% 0%;
+  }
+  &.divYield {
+    background-position: 90% 0%;
   }
   &_head {
     color: $white;
@@ -249,12 +293,14 @@ export default {
   &_list {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     > div {
       text-align: center;
-      width: 15%;
+      width: 18%;
       background: white;
       height: 18.4rem;
       overflow: auto;
+      margin: 0 1rem 1rem;
       &.active {
         border: 1px solid $light-gray;
         border-top: none;
@@ -265,15 +311,21 @@ export default {
       }
       h3 {
         cursor: pointer;
-        padding: 0.3rem 0;
+        padding: .5rem 0;
         margin: 0;
         font-size: $font-size-big;
         border-bottom: 1px solid $blue20perc;
-        background-color: $blue20perc;
+        background-color: $black;
+        color: $white;
+        border-bottom: 1px solid $white;
         &:hover {
           background-color: $blue;
           color: $white;
         }
+      }
+      &_list_wrap {
+        height: 18.4rem;
+        overflow: auto;
       }
     }
   }

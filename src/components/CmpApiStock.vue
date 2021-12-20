@@ -6,24 +6,24 @@
         <h2 v-html="$t('api.stock.info.title')"></h2>
         <p class="url">{{ $t('api.stock.info.url') }}</p>
         <p v-html="$t('api.stock.info.desc')" class="desc"></p>
-        <!--<router-link class="button primary" :to="{name: 'Api', params: {id: 'info'}}">{{$t('api.moreInfo')}}</router-link>-->
-        <a class="button primary" href="https://rapidapi.com/marcopavan.mp@gmail.com/api/tradingradar" target="_blank" rel="noopener noreferrer">{{$t('api.moreInfo')}}</a>
+        <!--<router-link class="button secondary" :to="{name: 'Api', params: {id: 'info'}}">{{$t('api.moreInfo')}}</router-link>-->
+        <a class="button secondary" href="https://rapidapi.com/marcopavan.mp@gmail.com/api/tradingradar" target="_blank" rel="noopener noreferrer">{{$t('api.moreInfo')}}</a>
       </div>
       <div class="banner">
         <h3 v-html="$t('api.stock.analysis.subtitle')"></h3>
         <h2 v-html="$t('api.stock.analysis.title')"></h2>
         <p class="url">{{ $t('api.stock.analysis.url') }}</p>
         <p v-html="$t('api.stock.analysis.desc')" class="desc"></p>
-        <!--<router-link class="button primary" :to="{name: 'Api', params: {id: 'analysis'}}">{{$t('api.moreInfo')}}</router-link>-->
-        <a class="button primary" href="https://rapidapi.com/marcopavan.mp@gmail.com/api/tradingradar" target="_blank" rel="noopener noreferrer">{{$t('api.moreInfo')}}</a>
+        <!--<router-link class="button secondary" :to="{name: 'Api', params: {id: 'analysis'}}">{{$t('api.moreInfo')}}</router-link>-->
+        <a class="button secondary" href="https://rapidapi.com/marcopavan.mp@gmail.com/api/tradingradar" target="_blank" rel="noopener noreferrer">{{$t('api.moreInfo')}}</a>
       </div>
       <div class="banner">
         <h3 v-html="$t('api.stock.news.subtitle')"></h3>
         <h2 v-html="$t('api.stock.news.title')"></h2>
         <p class="url">{{ $t('api.stock.news.url') }}</p>
         <p v-html="$t('api.stock.news.desc')" class="desc"></p>
-        <!--<router-link class="button primary" :to="{name: 'Api', params: {id: 'analysis'}}">{{$t('api.moreInfo')}}</router-link>-->
-        <a class="button primary" href="https://rapidapi.com/marcopavan.mp@gmail.com/api/tradingradar" target="_blank" rel="noopener noreferrer">{{$t('api.moreInfo')}}</a>
+        <!--<router-link class="button secondary" :to="{name: 'Api', params: {id: 'analysis'}}">{{$t('api.moreInfo')}}</router-link>-->
+        <a class="button secondary" href="https://rapidapi.com/marcopavan.mp@gmail.com/api/tradingradar" target="_blank" rel="noopener noreferrer">{{$t('api.moreInfo')}}</a>
       </div>
     </div>
     <div class="alphabet" id="alphabet">
@@ -110,9 +110,12 @@ export default {
       border: 1px solid $gray;
     }
   }
+  a {
+    float: right;
+  }
 }
 .alphabet {
-  margin: 3rem 0 1rem;
+  margin: 2rem 0 1rem;
   text-align: center;
   h2 {
     margin: 0;
@@ -139,12 +142,16 @@ export default {
 .stock-list {
   width: 60%;
   margin: 0 auto;
-  min-height: 15rem;
+  min-height: 10rem;
   border-bottom: 1px solid $light-gray;
   overflow-y: auto;
   div {
     text-align: center;
     margin-bottom: 1rem;
+  }
+  a {
+    font-weight: 550;
+    text-decoration: underline;
   }
 }
 </style>
