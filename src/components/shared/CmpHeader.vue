@@ -38,7 +38,7 @@ header {
     display: flex;
     justify-content: space-between;
     background-color: $white;
-    padding: 1rem $view-padding;
+    padding: 1rem $view-padding $view-padding;
     align-items: center;
   }
   section:first-child {

@@ -32,6 +32,7 @@ footer {
   justify-content: space-around;
   align-items: center;
   padding: .5rem;
+  margin-top: 2rem;
   a {
     color: $white;
     margin: 0 .5rem;

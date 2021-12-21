@@ -212,39 +212,35 @@ export default {
 
 <style scoped lang="scss">
 .stocks {
-  background-size: cover;
-  background-image: url(~@/assets/images/stocks-bg-min.jpg);
-  background-repeat: no-repeat;
-  transition: background-position .3s ease-out;
-  &.perf1M {
-    background-position: 0% 0%;
+  &.perf1M &_head {
+    background-position: 0% 60%;
   }
-  &.perf6M {
-    background-position: 10% 0%;
+  &.perf6M &_head  {
+    background-position: 10% 60%;
   }
-  &.perf1Y {
-    background-position: 20% 0%;
+  &.perf1Y &_head  {
+    background-position: 20% 60%;
   }
-  &.volatility {
-    background-position: 30% 0%;
+  &.volatility &_head  {
+    background-position: 30% 60%;
   }
-  &.rsi {
-    background-position: 40% 0%;
+  &.rsi &_head  {
+    background-position: 40% 60%;
   }
-  &.rating {
-    background-position: 50% 0%;
+  &.rating &_head  {
+    background-position: 50% 60%;
   }
-  &.mfRisk {
-    background-position: 60% 0%;
+  &.mfRisk &_head  {
+    background-position: 60% 60%;
   }
-  &.mfRsi {
-    background-position: 70% 0%;
+  &.mfRsi &_head  {
+    background-position: 70% 60%;
   }
-  &.mfRanking {
-    background-position: 80% 0%;
+  &.mfRanking &_head  {
+    background-position: 80% 60%;
   }
-  &.divYield {
-    background-position: 90% 0%;
+  &.divYield &_head  {
+    background-position: 90% 60%;
   }
   &_head {
     color: $white;
@@ -252,6 +248,11 @@ export default {
     justify-content: space-between;
     align-items: stretch;
     margin-bottom: 1rem;
+
+    background-size: 120%;
+    background-image: url(~@/assets/images/stocks-bg-min.jpg);
+    background-repeat: no-repeat;
+    transition: background-position .3s ease-out;
   }
   &_head_left {
     width: 75%;
@@ -337,6 +338,9 @@ export default {
       background: $blue70perc;
       margin: 0 0.5rem;
       border: 1px solid $light-gray;
+      &:hover {
+        background: $blue;
+      }
     }
   }
   &_listitem {

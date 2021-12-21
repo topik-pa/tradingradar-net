@@ -66,7 +66,7 @@
       "perf1M": {
         "param": "perf1M",
         "key": "perf1M",
-        "label": "Performance 1M",
+        "label": "Performance 1M (%)",
         "subtitle": "Una <abbr title='Application Program Interface'>API</abbr> per interrogare i principali media online ed ottenere statistiche dai mercati",
         "title": "<strong>Performance mensile</strong> dei titoli del FTSE MIB",
         "desc": "Ottieni i valori di <strong>performance mensili</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
@@ -77,7 +77,7 @@
       "perf6M": {
         "param": "perf6M",
         "key": "perf6M",
-        "label": "Performance 6M",
+        "label": "Performance 6M (%)",
         "subtitle": "Crea la tua pagina o applicazione Web con i dati messi a disposizione delle nostre <abbr title='Application Program Interface'>API</abbr> ",
         "title": "<strong>Performance a 6 mesi</strong> dei titoli del FTSE MIB",
         "desc": "Ottieni i valori di <strong>performance a sei mesi</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
@@ -88,7 +88,7 @@
       "perf1Y": {
         "param": "perf1Y",
         "key": "perf1Y",
-        "label": "Performance 1Y",
+        "label": "Performance 1Y (%)",
         "subtitle": "Le analisi dei principali media online subito a tua disposizione",
         "title": "<strong>Performance annuale</strong> dei titoli del FTSE MIB",
         "desc": "Ottieni i valori di <strong>performance annuali</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
@@ -121,7 +121,7 @@
       "rating": {
         "param": "rating",
         "key": "borsaIt_rating",
-        "label": "Rating",
+        "label": "Rating [0-4]",
         "subtitle": "*Crea la tua pagina o applicazione Web con i dati messi a disposizione delle nostre <abbr title='Application Program Interface'>API</abbr>*",
         "title": "*<strong><abbr title='Relative Strength Index'>RSI</abbr></strong> dei titoli del ftse MIB*",
         "desc": "*Ottieni i valori di <strong>RSI</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione*",
@@ -132,7 +132,7 @@
       "mfRisk": {
         "param": "risk",
         "key": "milFin_mfRisk",
-        "label": "MF Risk",
+        "label": "MF Risk [0-100]",
         "subtitle": "Le analisi dei principali media online subito a tua disposizione",
         "title": "<strong>Indice di rischio</strong> dei titoli del ftse MIB",
         "desc": "Ottieni i valori di <strong>rischio</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
@@ -154,7 +154,7 @@
       "mfRanking": {
         "param": "mfRanking",
         "key": "milFin_mfRanking",
-        "label": "MF Ranking",
+        "label": "MF Ranking [A-E]",
         "subtitle": "*Crea la tua pagina o applicazione Web con i dati messi a disposizione delle nostre <abbr title='Application Program Interface'>API</abbr>*",
         "title": "*<strong>Indice RSI da Milano Finanza</strong> dei titoli del ftse MIB*",
         "desc": "*Il <strong>Relative Strength Index</strong> espresso dagli analisti di Milano Finanza<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione*",

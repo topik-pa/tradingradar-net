@@ -214,7 +214,7 @@ export default {
 .top {
   color: $white;
   text-align: center;
-  background-image: url(~@/assets/images/breadcrumbs-image-4.jpg);
+  background-image: url(~@/assets/images/stock-min.jpeg);
   text-shadow: $black 0px 0px 10px;
   h1 {
     margin: 1rem 0;
