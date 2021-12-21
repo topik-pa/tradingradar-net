@@ -142,6 +142,24 @@ export default {
           status: 'idle',
           source: 'milanoFinanza',
           stocks: []
+        },
+        {
+          id: 10,
+          name: 's24ShortTendency',
+          key: 'sol24_shortTendency',
+          maxResults: 5,
+          status: 'idle',
+          source: 'ilSole24Ore',
+          stocks: []
+        },
+        {
+          id: 11,
+          name: 's24MediumTendency',
+          key: 'sol24_mediumTendency',
+          maxResults: 5,
+          status: 'idle',
+          source: 'ilSole24Ore',
+          stocks: []
         }
       ]
     }
@@ -216,31 +234,37 @@ export default {
     background-position: 0% 60%;
   }
   &.perf6M &_head  {
-    background-position: 10% 60%;
+    background-position: 8% 60%;
   }
   &.perf1Y &_head  {
-    background-position: 20% 60%;
+    background-position: 16% 60%;
   }
   &.volatility &_head  {
-    background-position: 30% 60%;
+    background-position: 24% 60%;
   }
   &.rsi &_head  {
-    background-position: 40% 60%;
+    background-position: 32% 60%;
   }
   &.rating &_head  {
-    background-position: 50% 60%;
+    background-position: 40% 60%;
   }
   &.mfRisk &_head  {
-    background-position: 60% 60%;
+    background-position: 48% 60%;
   }
   &.mfRsi &_head  {
-    background-position: 70% 60%;
+    background-position: 56% 60%;
   }
   &.mfRanking &_head  {
-    background-position: 80% 60%;
+    background-position: 64% 60%;
   }
   &.divYield &_head  {
-    background-position: 90% 60%;
+    background-position: 72% 60%;
+  }
+  &.s24ShortTendency &_head  {
+    background-position: 80% 60%;
+  }
+  &.s24MediumTendency &_head  {
+    background-position: 88% 60%;
   }
   &_head {
     color: $white;
@@ -297,7 +321,7 @@ export default {
   }
   &_list {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     > div {
       text-align: center;

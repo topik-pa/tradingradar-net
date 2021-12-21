@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="copy">
-      {{project.name}} &copy; {{project.copyright}} <a :href="`mailto:${author.email}`">{{ author.name }} {{ author.surname }}</a>
+      {{project.name}} &copy; {{project.copyright}} {{ author.name }} {{ author.surname }} <br> <router-link :to="{name: 'Privacy'}">{{$t('menu.privacy')}}</router-link>
     </div>
   </footer>
 </template>
@@ -34,11 +34,14 @@ footer {
   padding: .5rem;
   margin-top: 2rem;
   a {
-    color: $white;
     margin: 0 .5rem;
     &.icon {
       font-size: 2rem;
     }
+  }
+  .copy {
+    text-align: center;
+    line-height: 130%;
   }
 }
 @media screen and (max-width: 768px) {

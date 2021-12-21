@@ -46,7 +46,8 @@
     "about": "About",
     "widgets": "Widget",
     "concepts": "Concetti",
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "contacts": "Contatti"
   },
   "cookie": {
     "title": "Questa applicazione Web utilizza i cookie",
@@ -67,9 +68,9 @@
         "param": "perf1M",
         "key": "perf1M",
         "label": "Performance 1M (%)",
-        "subtitle": "Una <abbr title='Application Program Interface'>API</abbr> per interrogare i principali media online ed ottenere statistiche dai mercati",
+        "subtitle": "Una <abbr title='Application Program Interface'>API</abbr> per <strong>interrogare i principali media online</strong> ed ottenere statistiche dai mercati",
         "title": "<strong>Performance mensile</strong> dei titoli del FTSE MIB",
-        "desc": "Ottieni i valori di <strong>performance mensili</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
+        "desc": "Ottieni i valori di <strong>performance mensili</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione.",
         "url": "/api/stocks/perf1M",
         "source": "Borsa Italiana", 
         "sourceUrl": "https://www.borsaitaliana.it/homepage/homepage.htm"
@@ -78,9 +79,9 @@
         "param": "perf6M",
         "key": "perf6M",
         "label": "Performance 6M (%)",
-        "subtitle": "Crea la tua pagina o applicazione Web con i dati messi a disposizione delle nostre <abbr title='Application Program Interface'>API</abbr> ",
+        "subtitle": "Crea la tua pagina o applicazione Web con i <strong>dati messi a disposizione delle nostre <abbr title='Application Program Interface'>API</abbr></strong>",
         "title": "<strong>Performance a 6 mesi</strong> dei titoli del FTSE MIB",
-        "desc": "Ottieni i valori di <strong>performance a sei mesi</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
+        "desc": "Ottieni i valori di <strong>performance a sei mesi</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione.",
         "url": "/api/stocks/perf6M",
         "source": "Borsa Italiana",
         "sourceUrl": "https://www.borsaitaliana.it/homepage/homepage.htm"
@@ -91,7 +92,7 @@
         "label": "Performance 1Y (%)",
         "subtitle": "Le analisi dei principali media online subito a tua disposizione",
         "title": "<strong>Performance annuale</strong> dei titoli del FTSE MIB",
-        "desc": "Ottieni i valori di <strong>performance annuali</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
+        "desc": "Ottieni i valori di <strong>performance annuali</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione.",
         "url": "/api/stocks/perf1Y",
         "source": "Borsa Italiana",
         "sourceUrl": "https://www.borsaitaliana.it/homepage/homepage.htm"
@@ -100,9 +101,9 @@
         "param": "volatility",
         "key": "volatility",
         "label": "Volatilità",
-        "subtitle": "Una <abbr title='Application Program Interface'>API</abbr> per interrogare i principali media online ed ottenere statistiche dai mercati",
-        "title": "<strong>Volatilità</strong> dei titoli del ftse MIB",
-        "desc": "Ottieni i valori di <strong>volatilità</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
+        "subtitle": "Crea un <strong>Widget sulla tua pagina Web</strong> con i dati di <strong>Volatilità</strong> dei titoli del FTSE MIB Italia",
+        "title": "<strong>Volatilità</strong> dei titoli del FTSE MIB",
+        "desc": "Ottieni i valori di <strong>volatilità</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione.",
         "url": "/api/stocks/volatility",
         "source": "Borsa Italiana",
         "sourceUrl": "https://www.borsaitaliana.it/homepage/homepage.htm"
@@ -111,9 +112,9 @@
         "param": "rsi",
         "key": "borsaIt_rsi",
         "label": "RSI",
-        "subtitle": "Crea la tua pagina o applicazione Web con i dati messi a disposizione delle nostre <abbr title='Application Program Interface'>API</abbr>",
+        "subtitle": "Ottieni il <strong>ranking Relative Strength Index</strong> dei principali titoli della Borsa Italiana",
         "title": "<strong><abbr title='Relative Strength Index'>RSI</abbr></strong> dei titoli del ftse MIB",
-        "desc": "Ottieni i valori di <strong>RSI</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
+        "desc": "Ottieni i valori di <strong>RSI</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione.",
         "url": "/api/stocks/rsi",
         "source": "Borsa Italiana",
         "sourceUrl": "https://www.borsaitaliana.it/homepage/homepage.htm"
@@ -122,9 +123,9 @@
         "param": "rating",
         "key": "borsaIt_rating",
         "label": "Rating [0-4]",
-        "subtitle": "*Crea la tua pagina o applicazione Web con i dati messi a disposizione delle nostre <abbr title='Application Program Interface'>API</abbr>*",
-        "title": "*<strong><abbr title='Relative Strength Index'>RSI</abbr></strong> dei titoli del ftse MIB*",
-        "desc": "*Ottieni i valori di <strong>RSI</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione*",
+        "subtitle": "I principali titoli della Borsa di Milano classificati per <strong>Rating</strong>",
+        "title": "<strong>Rating</strong> dei titoli del FTSE MIB",
+        "desc": "Ottieni i valori di <strong>Rating</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione.",
         "url": "/api/stocks/rating",
         "source": "Borsa Italiana",
         "sourceUrl": "https://www.borsaitaliana.it/homepage/homepage.htm"
@@ -134,8 +135,8 @@
         "key": "milFin_mfRisk",
         "label": "MF Risk [0-100]",
         "subtitle": "Le analisi dei principali media online subito a tua disposizione",
-        "title": "<strong>Indice di rischio</strong> dei titoli del ftse MIB",
-        "desc": "Ottieni i valori di <strong>rischio</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
+        "title": "<strong>Indice di rischio</strong> dei titoli del FTSE MIB",
+        "desc": "Ottieni i valori di <strong>rischio</strong> dei principali titoli <strong>del mercato italiano</strong>.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione.",
         "url": "/api/stocks/risk",
         "source": "Milano Finanza",
         "sourceUrl": "https://www.milanofinanza.it"
@@ -144,9 +145,9 @@
         "param": "mfRsi",
         "key": "milFin_rsi",
         "label": "MF RSI",
-        "subtitle": "Crea la tua pagina o applicazione Web con i dati messi a disposizione delle nostre <abbr title='Application Program Interface'>API</abbr>",
-        "title": "<strong>Indice RSI da Milano Finanza</strong> dei titoli del ftse MIB",
-        "desc": "Il <strong>Relative Strength Index</strong> espresso dagli analisti di Milano Finanza<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
+        "subtitle": "<strong>Crea la tua pagina o applicazione Web</strong> con i dati messi a disposizione delle nostre <abbr title='Application Program Interface'>API</abbr>",
+        "title": "<strong>Indice RSI da Milano Finanza</strong> dei titoli del FTSE MIB",
+        "desc": "Il <strong>Relative Strength Index</strong> espresso dagli analisti di Milano Finanza<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione.",
         "url": "/api/stocks/mfRsi",
         "source": "Milano Finanza",
         "sourceUrl": "https://www.milanofinanza.it"
@@ -155,9 +156,9 @@
         "param": "mfRanking",
         "key": "milFin_mfRanking",
         "label": "MF Ranking [A-E]",
-        "subtitle": "*Crea la tua pagina o applicazione Web con i dati messi a disposizione delle nostre <abbr title='Application Program Interface'>API</abbr>*",
-        "title": "*<strong>Indice RSI da Milano Finanza</strong> dei titoli del ftse MIB*",
-        "desc": "*Il <strong>Relative Strength Index</strong> espresso dagli analisti di Milano Finanza<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione*",
+        "subtitle": "Crea un <strong>Widget sulla tua pagina Web</strong> con i dati di <strong>Ranking</strong> dei titoli del FTSE MIB Italia",
+        "title": "<strong>Valore di Ranking da Milano Finanza</strong> dei titoli del FTSE MIB",
+        "desc": "Il <strong>Ranking</strong> espresso dagli analisti di Milano Finanza<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione.",
         "url": "/api/stocks/mfRanking",
         "source": "Milano Finanza",
         "sourceUrl": "https://www.milanofinanza.it"
@@ -168,10 +169,32 @@
         "label": "Dividendo (%)",
         "subtitle": "Una <abbr title='Application Program Interface'>API</abbr> per interrogare i principali media online ed ottenere statistiche dai mercati",
         "title": "Il <strong>valore del dividendo</strong> espresso in percentuale sul prezzo corrente",
-        "desc": "Quale è il titolo che paga <strong>il dividendo maggiore</strong> in relazione al valore delle sue azioni?.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
+        "desc": "Quale è il titolo che paga <strong>il dividendo maggiore</strong> in relazione al valore delle sue azioni?.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione.",
         "url": "/api/stocks/divYield",
         "source": "Milano Finanza",
         "sourceUrl": "https://www.milanofinanza.it"
+      },
+      "s24ShortTendency": {
+        "param": "s24ShortTendency",
+        "key": "sol24_shortTendency",
+        "label": "Tendenza a breve termine",
+        "subtitle": "Scopri la <strong>tendenza di breve termine</strong> e confrontala con gli altri parametri di analisi tecnica",
+        "title": "<strong>Tendenza di breve termine</strong> secondo gli analisti del Sole 24 Ore",
+        "desc": "Cosa ne pensano i principali analisti del settore? Aggiungi la loro analisi alle tue considerazioni.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione*",
+        "url": "/api/stocks/s24ShortTendency",
+        "source": "Il Sole 24 Ore",
+        "sourceUrl": "https://www.ilsole24ore.com"
+      },
+      "s24MediumTendency": {
+        "param": "s24MediumTendency",
+        "key": "sol24_mediumTendency",
+        "label": "Tendenza a medio termine",
+        "subtitle": "Scopri la <strong>tendenza di breve termine</strong> e confrontala con gli altri parametri di analisi tecnica",
+        "title": "<strong>Tendenza di medio termine</strong> secondo gli analisti del Sole 24 Ore",
+        "desc": "Cosa ne pensano i principali analisti del settore? Aggiungi la loro analisi alle tue considerazioni.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione*",
+        "url": "/api/stocks/s24MediumTendency",
+        "source": "Il Sole 24 Ore",
+        "sourceUrl": "https://www.ilsole24ore.com"
       }
     },
     "stock": {

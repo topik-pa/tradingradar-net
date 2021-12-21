@@ -94,7 +94,7 @@ export default {
 }
 .banner {
   width: 40%;
-  margin: 3rem 5rem 3rem 5rem;
+  margin: 2rem 4rem 2rem 4rem;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 1rem;
   border-bottom: 1px solid $white;

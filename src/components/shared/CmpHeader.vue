@@ -11,14 +11,17 @@
       <div class="logo">
         <router-link :to="{name: 'Home'}">{{project}}</router-link>
       </div>
+      <CmpMenu/>
     </section>
   </header>
 </template>
 
 <script>
+import CmpMenu from '@/components/shared/CmpMenu'
 export default {
   name: 'CmpHeader',
   components: {
+    CmpMenu
   },
   computed: {
     project () {
