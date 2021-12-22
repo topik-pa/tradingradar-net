@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="copy">
-      {{project.name}} &copy; {{project.copyright}} {{ author.name }} {{ author.surname }} <br> <router-link :to="{name: 'Privacy'}">{{$t('menu.privacy')}}</router-link>
+      {{project.name}} &copy; {{project.copyright}} <a href="https://www.linkedin.com/in/markopavan/">{{ author.name }} {{ author.surname }}</a><br> <router-link :to="{name: 'Privacy'}">{{$t('menu.privacy')}}</router-link>
     </div>
   </footer>
 </template>

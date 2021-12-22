@@ -29,7 +29,7 @@
     <div class="stocks_body">
       <div class="stocks_list">
         <div v-for="obj in api" :key="obj.id" :class="[{'active': obj.active}, obj.status]">
-          <h3 @click="gotToStockAPI(obj.id)">{{ $t(`api.stocks.${obj.name}.label`) }}</h3>
+          <h3 @click="gotToStockAPI(obj.id)" :class="obj.name">{{ $t(`api.stocks.${obj.name}.label`) }}</h3>
           <div class="stocks_list_wrap">
             <div v-for="stock in obj.stocks" :key="stock.isin" class="stocks_listitem">
               <router-link :to="{name: 'Stock', params: {isin: stock.isin}}">{{ stock.name }}</router-link>
@@ -337,6 +337,7 @@ export default {
         color: $white;
       }
       h3 {
+        position: relative;
         cursor: pointer;
         padding: .5rem 0;
         margin: 0;
@@ -348,6 +349,55 @@ export default {
         &:hover {
           background-color: $blue;
           color: $white;
+        }
+        &::after {
+          content: ' ';
+          height: 30px;
+          display: block;
+          position: absolute;
+          width: 30px;
+          background-repeat: no-repeat;
+          right: 0rem;
+          top: 0;
+          background-size: cover;
+          border: 1px solid $black;
+          box-sizing: border-box;
+        }
+        &.perf1M::after {
+          background-image: url(~@/assets/images/borsaItaliana.png);
+        }
+        &.perf6M::after {
+          background-image: url(~@/assets/images/borsaItaliana.png);
+        }
+        &.perf1Y::after {
+          background-image: url(~@/assets/images/borsaItaliana.png);
+        }
+        &.volatility::after {
+          background-image: url(~@/assets/images/borsaItaliana.png);
+        }
+        &.rsi::after {
+          background-image: url(~@/assets/images/borsaItaliana.png);
+        }
+        &.rating::after {
+          background-image: url(~@/assets/images/borsaItaliana.png);
+        }
+        &.mfRisk::after {
+          background-image: url(~@/assets/images/milanoFinanza.png);
+        }
+        &.mfRsi::after {
+          background-image: url(~@/assets/images/milanoFinanza.png);
+        }
+        &.mfRanking::after {
+          background-image: url(~@/assets/images/milanoFinanza.png);
+        }
+        &.divYield::after {
+          background-image: url(~@/assets/images/milanoFinanza.png);
+        }
+        &.shortTendency::after {
+          background-image: url(~@/assets/images/ilSole24Ore.png);
+        }
+        &.mediumTendency::after {
+          background-image: url(~@/assets/images/ilSole24Ore.png);
         }
       }
     }
