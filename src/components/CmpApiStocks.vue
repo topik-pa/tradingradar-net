@@ -145,7 +145,7 @@ export default {
         },
         {
           id: 10,
-          name: 's24ShortTendency',
+          name: 'shortTendency',
           key: 'sol24_shortTendency',
           maxResults: 5,
           status: 'idle',
@@ -154,7 +154,7 @@ export default {
         },
         {
           id: 11,
-          name: 's24MediumTendency',
+          name: 'mediumTendency',
           key: 'sol24_mediumTendency',
           maxResults: 5,
           status: 'idle',
@@ -260,10 +260,10 @@ export default {
   &.divYield &_head  {
     background-position: 72% 60%;
   }
-  &.s24ShortTendency &_head  {
+  &.shortTendency &_head  {
     background-position: 80% 60%;
   }
-  &.s24MediumTendency &_head  {
+  &.mediumTendency &_head  {
     background-position: 88% 60%;
   }
   &_head {
@@ -327,7 +327,7 @@ export default {
       text-align: center;
       width: 18%;
       background: white;
-      margin: 0 1rem 1rem;
+      margin: 1rem 1rem 1rem;
       &.active {
         border: 1px solid $light-gray;
         border-top: none;

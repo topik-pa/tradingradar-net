@@ -174,25 +174,25 @@
         "source": "Milano Finanza",
         "sourceUrl": "https://www.milanofinanza.it"
       },
-      "s24ShortTendency": {
-        "param": "s24ShortTendency",
+      "shortTendency": {
+        "param": "shortTendency",
         "key": "sol24_shortTendency",
         "label": "Tendenza a breve termine",
         "subtitle": "Scopri la <strong>tendenza di breve termine</strong> e confrontala con gli altri parametri di analisi tecnica",
         "title": "<strong>Tendenza di breve termine</strong> secondo gli analisti del Sole 24 Ore",
         "desc": "Cosa ne pensano i principali analisti del settore? Aggiungi la loro analisi alle tue considerazioni.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione*",
-        "url": "/api/stocks/s24ShortTendency",
+        "url": "/api/stocks/shortTendency",
         "source": "Il Sole 24 Ore",
         "sourceUrl": "https://www.ilsole24ore.com"
       },
-      "s24MediumTendency": {
-        "param": "s24MediumTendency",
+      "mediumTendency": {
+        "param": "mediumTendency",
         "key": "sol24_mediumTendency",
         "label": "Tendenza a medio termine",
         "subtitle": "Scopri la <strong>tendenza di breve termine</strong> e confrontala con gli altri parametri di analisi tecnica",
         "title": "<strong>Tendenza di medio termine</strong> secondo gli analisti del Sole 24 Ore",
         "desc": "Cosa ne pensano i principali analisti del settore? Aggiungi la loro analisi alle tue considerazioni.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione*",
-        "url": "/api/stocks/s24MediumTendency",
+        "url": "/api/stocks/mediumTendency",
         "source": "Il Sole 24 Ore",
         "sourceUrl": "https://www.ilsole24ore.com"
       }

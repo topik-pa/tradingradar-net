@@ -29,7 +29,7 @@
     <div class="alphabet" id="alphabet">
       <h2>{{ $t('api.selectTitle') }}</h2>
       <h3>{{ $t('api.selectTitleSub') }}</h3>
-      <span v-for="letter in alphabet" :key="letter" @click="filterStockeByLetter(letter)">
+      <span v-for="letter in alphabet" :key="letter" @click="filterStockeByLetter(letter)" :class="{'selected': letter === startLetter}">
         {{ letter }}
       </span>
     </div>
@@ -59,6 +59,7 @@ export default {
       this.filteredStocks = this.stocks.filter((stock) => {
         return stock.name[0] === letter
       })
+      this.startLetter = letter
     },
     getFsteMibStocks () {
       fetch(`${settings.apiEndpoint}/api/stocks`, {
@@ -134,6 +135,10 @@ export default {
     border-radius: 50%;
     width: 1rem;
     &:hover {
+      color: $white;
+      background-color: $dark-gray;
+    }
+    &.selected {
       color: $white;
       background-color: $dark-gray;
     }
