@@ -1,6 +1,13 @@
 <template>
   <header>
     <section>
+      <div class="donate">
+        <form action="https://www.paypal.com/donate" method="post" target="_top">
+        <input type="hidden" name="hosted_button_id" value="DTPB2B56AL994" />
+        <input type="image" src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Fai una donazione con il pulsante PayPal" />
+        <img alt="" border="0" src="https://www.paypal.com/it_IT/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+      </div>
       <div class="social">
         <a v-for="social in socials" :key="social.name" :href="social.url" class="icon" :class="social.name.toLowerCase()">
         <i :class="social.class"></i>
@@ -45,9 +52,16 @@ header {
     align-items: center;
   }
   section:first-child {
-    justify-content: flex-end;
+    justify-content: space-between;
     background-color: $darker-gray;
-    padding: .2rem $view-padding;
+    padding: 0 $view-padding;
+  }
+  .donate {
+    background: $lighter-gray;
+    border: 2px solid $gray;
+    padding-top: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
   .social {
     i {
