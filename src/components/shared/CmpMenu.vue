@@ -1,7 +1,6 @@
 <template>
     <nav v-show="isMenuOpen">
-      <router-link :to="{name: 'Home'}">{{$t('menu.home')}}</router-link>
-      <router-link :to="{name: 'About'}">{{$t('menu.about')}}</router-link>
+      <router-link :to="{name: 'Contacts'}">{{$t('menu.contacts')}}</router-link>
     </nav>
     <i class="icon-menu" @click="toggleMenu"></i>
 </template>

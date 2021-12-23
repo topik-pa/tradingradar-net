@@ -62,12 +62,16 @@ input[disabled] {
 }*/
 
 small {
-  font-size: 50%;
-  display: block;
+  font-size: 85%;
+  font-weight: normal;
 }
 
 strong {
   font-weight: bold;
+}
+
+em {
+  text-decoration: underline;
 }
 
 /*table {

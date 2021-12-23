@@ -17,12 +17,12 @@ const state = {
   socials: [
     {
       name: 'Facebook',
-      url: 'https://www.facebook.com',
+      url: 'https://www.facebook.com/tradingradar',
       class: 'icon-facebook2'
     },
     {
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com',
+      url: 'https://www.linkedin.com/in/markopavan/',
       class: 'icon-linkedin'
     }
   ]

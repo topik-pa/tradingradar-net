@@ -26,6 +26,11 @@ const routes = [
     path: '/privacy',
     name: 'Privacy',
     component: () => import(/* webpackChunkName: "privacy" */ '../views/Privacy.vue')
+  },
+  {
+    path: '/contacts',
+    name: 'Contacts',
+    component: () => import(/* webpackChunkName: "contacts" */ '../views/Contacts.vue')
   }
 ]
 

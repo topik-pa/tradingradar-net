@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="copy">
-      {{project.name}} &copy; {{project.copyright}} {{author}}
+      {{project.name}} &copy; {{project.copyright}} <a href="https://www.linkedin.com/in/markopavan/">{{ author.name }} {{ author.surname }}</a><br> <router-link :to="{name: 'Privacy'}">{{$t('menu.privacy')}}</router-link>
     </div>
   </footer>
 </template>
@@ -14,7 +14,7 @@ export default {
       return this.$store.getters.getProject
     },
     author () {
-      return `${this.$store.getters.getAuthor.name} ${this.$store.getters.getAuthor.surname}`
+      return this.$store.getters.getAuthor
     },
     socials () {
       return this.$store.getters.getSocials
@@ -32,11 +32,16 @@ footer {
   justify-content: space-around;
   align-items: center;
   padding: .5rem;
+  margin-top: 2rem;
   a {
     margin: 0 .5rem;
     &.icon {
       font-size: 2rem;
     }
+  }
+  .copy {
+    text-align: center;
+    line-height: 130%;
   }
 }
 @media screen and (max-width: 768px) {

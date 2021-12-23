@@ -1,8 +1,11 @@
 <template>
   <CmpHeader />
-  <div class="view home">
-    <CmpApiStock/>
-    <CmpApiStocks/>
+  <div class="view contacts">
+    <h1>Contatti</h1>
+    <h3>Questioni tecniche?</h3>
+    <p><a :href="`mailto:info@tradingradar.net`">info@tradingradar.net</a></p>
+    <h3>Questioni personali?</h3>
+    <p><a :href="`mailto:marco@tradingradar.net`">marco@tradingradar.net</a></p>
   </div>
   <CmpFooter />
 </template>
@@ -10,16 +13,11 @@
 <script>
 import CmpHeader from '@/components/shared/CmpHeader'
 import CmpFooter from '@/components/shared/CmpFooter'
-import CmpApiStocks from '@/components/CmpApiStocks'
-import CmpApiStock from '@/components/CmpApiStock'
-
 export default {
-  name: 'Home',
+  name: 'Privacy',
   components: {
     CmpHeader,
-    CmpFooter,
-    CmpApiStocks,
-    CmpApiStock
+    CmpFooter
   },
   data () {
     return {}
@@ -31,7 +29,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-section {
-  margin-bottom: 2rem;
+.contacts {
+  padding: 2rem;
 }
 </style>
