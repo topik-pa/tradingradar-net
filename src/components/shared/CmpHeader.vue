@@ -67,6 +67,7 @@ header {
     i {
       margin-left: 1rem;
       font-size: $font-size-bigger;
+      text-shadow: 0 0 $gray;
     }
   }
   .logo {

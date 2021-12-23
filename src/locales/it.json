@@ -202,21 +202,21 @@
         "title": "<strong>Informazioni</strong> sui titoli del FSTE MIB",
         "subtitle": "Ottieni <em>real time</em> <strong>informazioni</strong> su un titolo del FTSE MIB",
         "url": "/api/info/[ISIN]",
-        "desc": "Ottieni <strong>informazioni dai principali media online</strong> ed aggiornate in tempo reale.<br>&#8595;&#8595;&#8595; Seleziona un titolo nella sezione sotto per avere un esempio dei dati forniti dalle nostre API.",
+        "desc": "Ottieni <strong>informazioni dai principali media online</strong> ed aggiornate in tempo reale.<br>&#8595;&#8595;&#8595; <em>Seleziona un titolo</em> nella sezione sotto per avere un esempio dei dati forniti dalle nostre API.",
         "infoUrl": "#"
       },
       "analysis": {
         "title": "<strong>Analisi</strong> sui titoli del FSTE MIB",
         "subtitle": "Ottieni <em>real time</em> <strong>analisi tecniche</strong> su un titolo del FTSE MIB",
         "url": "/api/analysis/[ISIN]",
-        "desc": "Ottieni <strong>analisi tecniche dai principali media online</strong> ed aggiornate in tempo reale<br>&#8595;&#8595;&#8595; Seleziona un titolo nella sezione sotto per avere un esempio dei dati forniti dalle nostre API.",
+        "desc": "Ottieni <strong>analisi tecniche dai principali media online</strong> ed aggiornate in tempo reale<br>&#8595;&#8595;&#8595; <em>Seleziona un titolo</em> nella sezione sotto per avere un esempio dei dati forniti dalle nostre API.",
         "infoUrl": "#"
       },
       "news": {
         "title": "<strong>Rassegna stampa</strong> dei titoli del FSTE MIB",
         "subtitle": "Ottieni <em>real time</em> <strong>una rassegna stampa</strong> su un titolo del FTSE MIB",
         "url": "/api/news/[ISIN]",
-        "desc": "Ottieni una <strong>rassegna stampa ottenuta dai principali media online</strong> ed aggiornata in tempo reale<br>&#8595;&#8595;&#8595; Seleziona un titolo nella sezione sotto per avere un esempio dei dati forniti dalle nostre API.",
+        "desc": "Ottieni una <strong>rassegna stampa ottenuta dai principali media online</strong> ed aggiornata in tempo reale<br>&#8595;&#8595;&#8595; <em>Seleziona un titolo</em> nella sezione sotto per avere un esempio dei dati forniti dalle nostre API.",
         "infoUrl": "#"
       }
     }

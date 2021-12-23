@@ -159,4 +159,15 @@ export default {
     text-decoration: underline;
   }
 }
+
+@media screen and (max-width: 1280px) {
+  .banner {
+    margin: 2rem 2rem 2rem 2rem;
+  }
+}
+@media screen and (max-width: 414px) {
+  .banner {
+    width: 80%;
+  }
+}
 </style>

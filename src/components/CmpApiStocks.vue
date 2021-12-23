@@ -430,4 +430,57 @@ export default {
     overflow: auto;
   }
 }
+@media screen and (max-width: 1280px) {
+  .stocks_list > div {
+    width: 22%;
+  }
+  .stocks_list > div h3::after{
+    height: 28px;
+    width: 28px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .stocks_list > div h3::after{
+    height: 24px;
+    width: 24px;
+  }
+  .stocks_list > div h3 {
+    font-size: $font-size-normal;
+  }
+}
+@media screen and (max-width: 768px) {
+  .stocks_head_left {
+    margin: 0;
+    padding: 0 1rem;
+    h2 {
+      margin-bottom: 1rem;
+    }
+  }
+  .stocks_list > div {
+    width: 30%;
+  }
+  @media screen and (max-width: 414px) {
+    .stocks_head {
+      background-size: cover;
+    }
+    .stocks_head_left {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    .stocks_arrows {
+      text-align: left;
+      line-height: 150%;
+    }
+    .stocks_list > div {
+      width: 43%;
+    }
+    .stocks_list > div h3::after{
+      height: 20px;
+      width: 20px;
+    }
+    .stocks_list > div h3 {
+      text-align: left;
+      padding-left: 0.5rem;
+    }
+  }
+}
 </style>

@@ -231,14 +231,14 @@ export default {
   .info {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
     margin-top: 5rem;
     width: 48%;
     img {
       margin-right: 2rem;
+      width: 30%;
     }
     .content{
-      width: 100%;
+      width: 70%;
       span {
         float: right;
         font-style: italic;
@@ -313,6 +313,20 @@ export default {
   }
   .news-item {
     margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .infos .info {
+    width: 90%;
+    align-items: center;
+  }
+  .analisys {
+    display: block;
+  }
+  .source {
+    width: 100%;
+    margin-bottom: 5rem;
   }
 }
 
