@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import NotFound from '../views/NotFound.vue'
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: '/contacts',
     name: 'Contacts',
     component: () => import(/* webpackChunkName: "contacts" */ '../views/Contacts.vue')
+  },
+  {
+    path: '/:catchAll(.*)',
+    component: NotFound,
+    name: 'NotFound'
   }
 ]
 
