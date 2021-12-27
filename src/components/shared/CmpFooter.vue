@@ -1,8 +1,12 @@
 <template>
   <footer>
-    <div class="copy">
-      {{project.name}} &copy; {{project.copyright}} <a href="https://www.linkedin.com/in/markopavan/">{{ author.name }} {{ author.surname }}</a><br> <router-link :to="{name: 'Privacy'}">{{$t('menu.privacy')}}</router-link>
+    <div class="privacy">
+      <router-link :to="{name: 'Privacy'}">{{$t('menu.privacy')}}</router-link>
     </div>
+    <div class="copy">
+      {{project.name}} &copy; {{project.copyright}} <a href="https://www.linkedin.com/in/markopavan/">{{ author.name }} {{ author.surname }}</a>
+    </div>
+    <div class="fb-like" data-href="https://www.tradingradar.net" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
   </footer>
 </template>
 
@@ -29,7 +33,7 @@ footer {
   color: $white;
   background-color: $black;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   padding: .5rem;
   margin-top: 2rem;
