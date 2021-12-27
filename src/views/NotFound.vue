@@ -22,6 +22,11 @@ export default {
   },
   mounted () {
     window.scrollTo(0, 0)
+  },
+  created () {
+    setTimeout(() => {
+      this.$router.push({ name: 'Home' })
+    }, 1000 * 3)
   }
 }
 </script>
