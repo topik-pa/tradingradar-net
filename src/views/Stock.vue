@@ -127,7 +127,7 @@ export default {
   },
   data () {
     return {
-      isin: this.$route.params.isin,
+      isin: this.$route.query.isin || this.$route.params.isin,
       info: {
         status: 'idle',
         data: {}
@@ -149,6 +149,9 @@ export default {
         method: 'GET'
       })
         .then(response => {
+          if (response.status !== 200) {
+            this.$router.push({ name: 'Home' })
+          }
           return response.json()
         })
         .then(data => {
