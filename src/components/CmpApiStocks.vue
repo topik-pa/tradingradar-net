@@ -39,6 +39,106 @@
         </div>
       </div>
     </div>
+
+    <div class="filters">
+      <div class="filters_head">
+        <div class="titles">
+          <h2>{{ $t('filters') }}</h2>
+          <h3>{{ $t('filtersSubtitle') }}</h3>
+        </div>
+      </div>
+      <div class="stocks_filters">
+        <table class="filter">
+          <caption>{{ $t('rating') }}</caption>
+          <thead>
+            <tr>
+              <th>{{ $t('stock') }}</th>
+              <th>{{ $t('rating') }} {{ $t('mFinanza') }}</th>
+              <th>{{ $t('rating') }} {{ $t('borsaItaliana') }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="stock in filters.rank" :key="stock.isin">
+              <td><router-link :to="{name: 'Stock', params: {isin: stock.isin}}">{{ stock.name }}</router-link></td>
+              <td>{{ stock.milFin_mfRanking?.value }}</td>
+              <td>{{ stock.borsaIt_rating?.value }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="filter">
+          <caption>{{ $t('volatility') }}</caption>
+          <thead>
+            <tr>
+              <th>{{ $t('stock') }}</th>
+              <th>{{ $t('perf1M') }}</th>
+              <th>{{ $t('volatility') }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="stock in filters.volatility" :key="stock.isin">
+              <td><router-link :to="{name: 'Stock', params: {isin: stock.isin}}">{{ stock.name }}</router-link></td>
+              <td>{{ stock.perf1M?.value }}</td>
+              <td>{{ stock.volatility?.value }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="filter">
+          <caption>{{ $t('tendency') }} {{ $t('sol24') }}</caption>
+          <thead>
+            <tr>
+              <th>{{ $t('stock') }}</th>
+              <th>{{ $t('shortTendency') }}</th>
+              <th>{{ $t('mediumTendency') }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="stock in filters.tendency" :key="stock.isin">
+              <td><router-link :to="{name: 'Stock', params: {isin: stock.isin}}">{{ stock.name }}</router-link></td>
+              <td>{{ stock.sol24_shortTendency?.value }}</td>
+              <td>{{ stock.sol24_mediumTendency?.value }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="filter">
+          <caption>{{ $t('overBuy') }}</caption>
+          <thead>
+            <tr>
+              <th>{{ $t('stock') }}</th>
+              <th>{{ $t('rsi') }} {{ $t('borsaItaliana') }}</th>
+              <th>{{ $t('rsi') }} {{ $t('mFinanza') }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="stock in filters.rsiUp" :key="stock.isin">
+              <td><router-link :to="{name: 'Stock', params: {isin: stock.isin}}">{{ stock.name }}</router-link></td>
+              <td>{{ stock.borsaIt_rsi?.value }}</td>
+              <td>{{ stock.milFin_rsi?.value }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="filter">
+          <caption>{{ $t('overSell') }}</caption>
+          <thead>
+            <tr>
+              <th>{{ $t('stock') }}</th>
+              <th>{{ $t('rsi') }} {{ $t('borsaItaliana') }}</th>
+              <th>{{ $t('rsi') }} {{ $t('mFinanza') }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="stock in filters.rsiDown" :key="stock.isin">
+              <td><router-link :to="{name: 'Stock', params: {isin: stock.isin}}">{{ stock.name }}</router-link></td>
+              <td>{{ stock.borsaIt_rsi?.value }}</td>
+              <td>{{ stock.milFin_rsi?.value }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -161,7 +261,14 @@ export default {
           source: 'ilSole24Ore',
           stocks: []
         }
-      ]
+      ],
+      filters: {
+        rank: [],
+        volatility: [],
+        tendency: [],
+        rsiUp: [],
+        rsiDown: []
+      }
     }
   },
   methods: {
@@ -216,7 +323,169 @@ export default {
         })
         .finally(() => {
           this.getStocksAnalysis(++index)
+          if (index === this.api.length) {
+            this.filterStocksByRank()
+            this.filterStocksByVolatility()
+            this.filterStocksByTendency()
+            this.filterStocksByRsiUp()
+            this.filterStocksByRsiDown()
+          }
         })
+    },
+    filterStocksByRank () {
+      for (let i = 0; i < this.api.length; i++) {
+        const current = this.api[i]
+        if (current.name === 'rating') {
+          current.stocks.forEach(stock => {
+            if (stock.borsaIt_rating.value === '3' || stock.borsaIt_rating.value === '4') {
+              this.filters.rank.push(stock)
+            }
+          })
+        }
+      }
+      for (let i = 0; i < this.api.length; i++) {
+        const current = this.api[i]
+        if (current.name === 'mfRanking') {
+          current.stocks.forEach(stock => {
+            if (stock.milFin_mfRanking.value.includes('A') || stock.milFin_mfRanking.value.includes('B')) {
+              this.filters.rank.forEach((elem, i) => {
+                if (elem.isin === stock.isin) {
+                  elem.milFin_mfRanking = stock.milFin_mfRanking
+                }
+              })
+            }
+          })
+        }
+      }
+      this.filters.rank = this.filters.rank.filter((elem) => {
+        if (elem.milFin_mfRanking && elem.borsaIt_rating) {
+          return true
+        }
+      })
+    },
+    filterStocksByVolatility () {
+      for (let i = 0; i < this.api.length; i++) {
+        const current = this.api[i]
+        if (current.name === 'perf1M') {
+          current.stocks.forEach(stock => {
+            if (parseInt(stock.perf1M.value) >= 10) {
+              this.filters.volatility.push(stock)
+            }
+          })
+        }
+      }
+      for (let i = 0; i < this.api.length; i++) {
+        const current = this.api[i]
+        if (current.name === 'volatility') {
+          current.stocks.forEach(stock => {
+            if (parseInt(stock.volatility.value) >= 50) {
+              this.filters.volatility.forEach((elem, i) => {
+                if (elem.isin === stock.isin) {
+                  elem.volatility = stock.volatility
+                }
+              })
+            }
+          })
+        }
+      }
+      this.filters.volatility = this.filters.volatility.filter((elem) => {
+        if (elem.perf1M && elem.volatility) {
+          return true
+        }
+      })
+    },
+    filterStocksByTendency () {
+      for (let i = 0; i < this.api.length; i++) {
+        const current = this.api[i]
+        if (current.name === 'shortTendency') {
+          current.stocks.forEach(stock => {
+            if (stock.sol24_shortTendency.value.includes('Rialzo')) {
+              this.filters.tendency.push(stock)
+            }
+          })
+        }
+      }
+      for (let i = 0; i < this.api.length; i++) {
+        const current = this.api[i]
+        if (current.name === 'mediumTendency') {
+          current.stocks.forEach(stock => {
+            if (stock.sol24_mediumTendency.value.includes('Rialzo')) {
+              this.filters.tendency.forEach((elem) => {
+                if (elem.isin === stock.isin) {
+                  elem.sol24_mediumTendency = stock.sol24_mediumTendency
+                }
+              })
+            }
+          })
+        }
+      }
+      this.filters.tendency = this.filters.tendency.filter((elem) => {
+        if (elem.sol24_mediumTendency && elem.sol24_shortTendency) {
+          return true
+        }
+      })
+    },
+    filterStocksByRsiUp () {
+      for (let i = 0; i < this.api.length; i++) {
+        const current = this.api[i]
+        if (current.name === 'rsi') {
+          current.stocks.forEach(stock => {
+            if (parseInt(stock.borsaIt_rsi.value) >= 20) {
+              this.filters.rsiUp.push(stock)
+            }
+          })
+        }
+      }
+      for (let i = 0; i < this.api.length; i++) {
+        const current = this.api[i]
+        if (current.name === 'mfRsi') {
+          current.stocks.forEach(stock => {
+            if (parseInt(stock.milFin_rsi.value) >= 60) {
+              this.filters.rsiUp.forEach((elem, i) => {
+                if (elem.isin === stock.isin) {
+                  elem.milFin_rsi = stock.milFin_rsi
+                }
+              })
+            }
+          })
+        }
+      }
+      this.filters.rsiUp = this.filters.rsiUp.filter((elem) => {
+        if (elem.borsaIt_rsi && elem.milFin_rsi) {
+          return true
+        }
+      })
+    },
+    filterStocksByRsiDown () {
+      for (let i = 0; i < this.api.length; i++) {
+        const current = this.api[i]
+        if (current.name === 'rsi') {
+          current.stocks.forEach(stock => {
+            if (parseInt(stock.borsaIt_rsi.value) <= -20) {
+              this.filters.rsiDown.push(stock)
+            }
+          })
+        }
+      }
+      for (let i = 0; i < this.api.length; i++) {
+        const current = this.api[i]
+        if (current.name === 'mfRsi') {
+          current.stocks.forEach(stock => {
+            if (parseInt(stock.milFin_rsi.value) <= -60) {
+              this.filters.rsiDown.forEach((elem, i) => {
+                if (elem.isin === stock.isin) {
+                  elem.milFin_rsi = stock.milFin_rsi
+                }
+              })
+            }
+          })
+        }
+      }
+      this.filters.rsiDown = this.filters.rsiDown.filter((elem) => {
+        if (elem.borsaIt_rsi && elem.milFin_rsi) {
+          return true
+        }
+      })
     }
   },
   beforeMount () {
@@ -428,6 +697,67 @@ export default {
   &_list_wrap {
     height: 18.4rem;
     overflow: auto;
+  }
+
+  .filters_head {
+    background-image: url(~@/assets/images/lab-min.jpg);
+    text-align: center;
+    padding: 5rem;
+    margin-bottom: 4rem;
+    color: white;
+    position: relative;
+    background-size: auto;
+    background-position-y: center;
+    &::before {
+      content: ' ';
+      background: rgba(0,0,0,0.6);
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      left: 25%;
+    }
+    .titles {
+      position: absolute;
+      left: 25%;
+      width: 50%;
+      top: 25%;
+      text-shadow: 1px 1px 6px black;
+      h2 {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .stocks_filters {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  table.filter {
+    width: 30%;
+    margin-bottom: 4rem;
+    caption {
+      padding: .5rem 0;
+      font-size: 1.2rem;
+      background-color: $black;
+      color: $white;
+    }
+    td, th {
+      padding: .5rem;
+      text-align: left;
+    }
+    tbody tr {
+      &:nth-child(odd) {
+        background-color: $blue20perc;
+      }
+    }
+    thead {
+      border-bottom: 1px solid $black;
+      font-weight: 500;
+    }
   }
 }
 @media screen and (max-width: 1280px) {
