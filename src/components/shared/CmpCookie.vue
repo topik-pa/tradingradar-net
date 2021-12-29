@@ -37,7 +37,7 @@ export default {
     if (getCookie(this.cookie.name) === '') {
       setTimeout(() => {
         this.visible = true
-      }, this.cookie.compareAfter)
+      }, this.cookie.showAfter)
     }
   },
   methods: {
