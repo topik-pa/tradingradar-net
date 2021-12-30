@@ -704,6 +704,7 @@ export default {
     text-align: center;
     padding: 5rem;
     margin-bottom: 4rem;
+    margin-top: 6rem;
     color: white;
     position: relative;
     background-size: auto;
