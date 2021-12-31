@@ -6,6 +6,42 @@
       <h2>{{ info.data.code }} - {{ info.data.isin }}</h2>
     </section>
 
+    <section class="alerts">
+      <div v-if="lastPrice > info.data.mm20days?.value" class="low">
+        Il prezzo corrente (€{{lastPrice}}) è più alto della media a 20 giorni (€{{info.data.mm20days?.value}}).
+      </div>
+      <div v-if="lastPrice < info.data.mm20days?.value" class="low">
+        Il prezzo corrente (€{{lastPrice}}) è più basso della media a 20 giorni (€{{info.data.mm20days?.value}}).
+      </div>
+
+      <div v-if="lastPrice > info.data.mm20days?.value && lastPrice > info.data.mm40days?.value" class="medium">
+        Il prezzo corrente (€{{lastPrice}}) è più alto della media a 40 giorni (€{{info.data.mm40days?.value}}).
+      </div>
+      <div v-if="lastPrice < info.data.mm20days?.value && lastPrice < info.data.mm40days?.value" class="medium">
+        Il prezzo corrente (€{{lastPrice}}) è più basso della media a 40 giorni (€{{info.data.mm40days?.value}}).
+      </div>
+
+      <div v-if="lastPrice > info.data.mm20days?.value && lastPrice > info.data.mm40days?.value && lastPrice > info.data.mm100days?.value" class="high">
+        Il prezzo corrente (€{{lastPrice}}) è più alto della media a 100 giorni (€{{info.data.mm100days?.value}}).
+      </div>
+      <div v-if="lastPrice < info.data.mm20days?.value && lastPrice < info.data.mm40days?.value && lastPrice < info.data.mm100days?.value" class="high">
+        Il prezzo corrente (€{{lastPrice}}) è più basso della media a 100 giorni (€{{info.data.mm100days?.value}}).
+      </div>
+
+      <div v-if="lastPrice > analisys.data.borsaIt_resistance?.value.replace(',', '.')" class="high">
+        Il prezzo corrente (€{{lastPrice}}) è superiore alla resistenza indicata da Borsa Italiana (€{{analisys.data.borsaIt_resistance?.value.replace(',', '.')}}).
+      </div>
+      <div v-if="lastPrice < analisys.data.borsaIt_support?.value.replace(',', '.')" class="high">
+        Il prezzo corrente (€{{lastPrice}}) è inferiore al supporto indicato da Borsa Italiana (€{{analisys.data.borsaIt_support?.value.replace(',', '.')}}).
+      </div>
+      <div v-if="lastPrice > analisys.data.teleb_resistance?.value.replace(',', '.')" class="high">
+        Il prezzo corrente (€{{lastPrice}}) è superiore alla resistenza indicata da Teleborsa (€{{analisys.data.teleb_resistance?.value.replace(',', '.')}}).
+      </div>
+      <div v-if="lastPrice < analisys.data.teleb_support?.value.replace(',', '.')" class="high">
+        Il prezzo corrente (€{{lastPrice}}) è inferiore al supporto indicato da Teleborsa (€{{analisys.data.teleb_support?.value.replace(',', '.')}}).
+      </div>
+    </section>
+
     <section class="infos" :class="info.status">
       <div class="info">
         <img :src="require(`@/assets/images/dividend.jpg`)" :alt="$t('dividend')">
@@ -128,6 +164,7 @@ export default {
   data () {
     return {
       isin: this.$route.query.isin || this.$route.params.isin,
+      lastPrice: undefined,
       info: {
         status: 'idle',
         data: {}
@@ -157,6 +194,7 @@ export default {
         .then(data => {
           this.info.data = data
           this.info.status = 'success'
+          this.lastPrice = this.info.data.lastPrice.value.replace(',', '.')
           this.getStockAnalysis()
         })
         .catch(err => {
@@ -316,6 +354,24 @@ export default {
   }
   .news-item {
     margin-bottom: 1.5rem;
+  }
+}
+
+.alerts {
+  div {
+    padding: .3rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid $lighter-gray;
+    font-style: italic;
+    &.low {
+      background-color: rgba(0, 255, 0, 0.1);
+    }
+    &.medium {
+      background-color: rgba(255, 255, 0, 0.1);
+    }
+    &.high {
+      background-color: rgba(255, 0, 0, 0.1);
+    }
   }
 }
 

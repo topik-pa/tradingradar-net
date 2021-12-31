@@ -1,4 +1,7 @@
 <template>
+  <section class="disclaimer">
+    ATTENZIONE: operare in Borsa e fare trading costituiscono azioni ad alto rischio. Le informazioni qui presentate non costituiscono una sollecitazione di acquisto o vendita di titoli azionari e si intendono per puro uso informativo. Il proprietario del presente sito non si dichiara responsabile di un utilizzo improprio delle informazioni qui ottenute.
+  </section>
   <footer>
     <div class="privacy">
       <router-link :to="{name: 'Privacy'}">{{$t('menu.privacy')}}</router-link>
@@ -29,6 +32,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.disclaimer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-style: italic;
+  background-color: $lighter-gray;
+  line-height: 120%;
+}
 footer {
   color: $white;
   background-color: $black;

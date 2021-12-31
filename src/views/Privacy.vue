@@ -3,87 +3,75 @@
   <div class="view privacy">
     <h1>Privacy policy</h1>
     <dl class="list-terms">
-      <dt class="heading-6">General information</dt>
+      <dt class="heading-6">Informazioni generali</dt>
       <dd>
-        Welcome to our Privacy Policy page! When you use our web site services, you trust us with your
-        information. This Privacy Policy is meant to help you understand what data we collect, why we
-        collect it, and what we do with it. When you share information with us, we can make our services
-        even better for you. For instance, we can show you more relevant search results and ads, help
-        you connect with people or to make sharing with others quicker and easier. As you use our
-        services, we want you to be clear how we’re using information and the ways in which you can
-        protect your privacy. This is important; we hope you will take time to read it carefully.
-        Remember, you can find controls to manage your information and protect your privacy and
-        security. We’ve tried
-        to keep it as simple as possible.
+        Informativa resa, ai sensi del Regolamento UE 679/2016, di seguito chiamato "GDPR", degli artt. 13 e 122 del Codice in materia di protezione dei dati personali (D.Lgs. 196/03) e del Provvedimento generale del Garante dell'8 maggio 2014 in materia di cookie, agli utenti che si collegano al sito www.tradingradar.net, di seguito chiamato "sito".
       </dd>
-      <dt class="heading-6">Right to access, correct and delete data and to object to data processing</dt>
+      <dt class="heading-6">Cosa sono i Cookie</dt>
       <dd>
-        Our customers have the right to access, correct and delete personal data relating to them, and
-        to object to the processing of such data, by addressing a written request, at any time. The
-        Company makes every effort to put in place suitable precautions to safeguard the security and
-        privacy of personal data, and to prevent it from being altered, corrupted, destroyed or accessed
-        by unauthorized third parties. However, the Company does not control each and every risk related
-        to the use of the Internet, and therefore warns the Site users of the potential risks involved
-        in the functioning and use of the Internet. The Site may include links to other web sites or
-        other internet sources. As the Company cannot control these web sites and external sources, the
-        Company cannot be held responsible for the provision or display of these web sites and external
-        sources, and may not be held liable for the content, advertising, products, services or any
-        other material available on or from these web sites or external sources.
+        I cookie sono semplici informazioni che vengono trasferite dal sito web e salvate sull'hard disk del computer dell'utente e sono piccoli file di testo che consentono ai siti web di memorizzare alcuni dati per renderli accessibili ad un successivo accesso dell'utente.
+
+        Basandosi sulla provenienza i cookie si dividono in due categorie:
+
+        i cookie proprietari, che sono creati, cancellati e modificati direttamente dal sito visitato.
+
+        i cookie di terze parti, che vengono creati da altri siti proprietari dei contenuti, ad esempio annunci, immagini, bottoni social o altri servizi, visualizzati nella pagina web del sito che stai visitando.
+
+        Basandosi sulla loro durata invece, i cookie possono essere classificati come segue:
+
+        i cookie temporanei (ad esempio i cookie di sessione) che si cancellano automaticamente alla chiusura del browser.
+
+        i cookie permanenti che restano disponibili finché non vengono cancellati espressamente dall'utente o fino alla loro naturale scadenza, stabilita dal sito stesso.
+
+        La maggior parte dei siti utilizza i cookie perché rientrano tra gli strumenti tecnici di uso comune sul web in grado di migliorare la navigazione e la user experience permettendo inoltre di offrire servizi personalizzati (ad esempio, evitare di richiedere ogni volta le credenziali di accesso, ricordare l'ultima applicazione utilizzata, conservare i prodotti nel carrello, mostrare contenuti importanti per l'utente, ricordare che un messaggio è già stato visualizzato ecc.).
+
+        Questi sono detti anche "cookie tecnici" e non rientrano nell'ambito del trattamento dei dati disciplinato dal GDPR poiché non contengono dati personali, né identificativi associati a dati personali o altre informazioni che consentono di identificare l'utente, ed il loro utilizzo è strettamente funzionale all'erogazione dei servizi da parte del sito.
+
+        Anche le aziende pubblicitarie possono utilizzare i cookie tecnici, ad esempio per limitare il numero di volte in cui visualizzare un determinato annuncio, o stabilire la frequenza di visualizzazione dei messaggi pubblicitari (rotazione dei banner).
+
+        In ogni caso, i cookie possono essere letti o modificati solo dal sito che li ha creati e non possono essere utilizzati per accedere a nessun altro dato dell'utente tramite il browser né possono trasmettere virus informatici in quanto non sono programmi software, ma semplici informazioni di testo che non possono assolutamente arrecare danno al computer.
+
+        La maggior parte dei browser accetta i cookie automaticamente e tuttavia l'utente può disattivare i cookie direttamente dal proprio browser.
+
+        E' bene sapere tuttavia che, in base al livello qualitativo dei servizi offerti dal sito, la disattivazione dei cookie può comportare per l'utente l'impossibilità di utilizzare tutte o alcune delle funzionalità online e in taluni casi l'accesso al sito stesso.
       </dd>
-      <dt class="heading-6">Management of personal data</dt>
+      <dt class="heading-6">I cookie del nostro sito</dt>
       <dd>
-        You can view or edit your personal data online for many of our services. You can also make
-        choices about our collection and use of your data. How you can access or control your personal
-        data will depend on which services you use. You can choose whether you wish to receive
-        promotional communications from our web site by email, SMS, physical mail, and telephone. If you
-        receive promotional email or SMS messages from us and would like to opt out, you can do so by
-        following the directions in that message. You can also make choices about the receipt of
-        promotional email, telephone calls, and postal mail by visiting and signing into Company
-        Promotional Communications Manager, which allows you to update contact information, manage
-        contact preferences, opt out of email subscriptions, and choose whether to share your contact
-        information with our partners. These choices do not apply to mandatory service communications
-        that are part of certain web site services.
+        Come la maggior parte dei siti web anche il nostro sito utilizza i cookie per migliorare l'esperienza utente, per rendere più semplice l'utilizzo delle nostre applicazioni e per fornire funzionalità avanzate che non sarebbero possibili senza l'utilizzo dei cookie.
+
+        Il nostro sito utilizza cookie proprietari e cookie di terze parti.
+
+        Per quanto riguarda i cookie proprietari utilizziamo esclusivamente "cookie tecnici" sia temporanei che permanenti.
       </dd>
-      <dt class="heading-6">Information We Collect</dt>
+      <dt class="heading-6">I Cookie di terze parti</dt>
       <dd>
-        Our store collects data to operate effectively and provide you the best experiences with our
-        services. You provide some of this data directly, such as when you create a personal account.
-        We get some of it by recording how you interact with our services by, for example, using
-        technologies like cookies, and receiving error reports or usage data from software running on
-        your device. We also obtain data from third parties (including other companies). For example, we
-        supplement the data we collect by purchasing demographic data from other companies. We also use
-        services from other companies to help us determine a location based on your IP address in order
-        to customize certain services to your location. The data we collect depends on the services
-        and features you use.
+        Il sito consente la trasmissione di cookie di terze parti (social media e monitoraggio statistico), limitandosi in questo caso al semplice invio dei cookie sul terminale dell'utente, senza gestirne l'operatività e i contenuti, che rimangono quindi a totale carico delle terze parti.
+
+        Il nostro sito utilizza esclusivamente i cookie "nativi" dei vari browser (informazioni di tipo testo) e non si avvale dei cosiddetti "Flash Cookie" (una diversa tipologia di cookie cross-browser) ma alcuni siti di terze parti potrebbero utilizzare questa tecnologia che richiede la presenza del plugin Adobe-Flash nel browser.
+
+        Si precisa che il plugin Adobe-Flash è divenuto obsoleto e non più supportato a partire dal 2021 in quanto l’azienda produttrice del software lo ha ritirato dal mercato, trattandosi di tecnologia ormai superata, e pertanto tale tipologia di cookie è destinata a scomparire nel breve periodo.
+
+        Social Media
+        Per quanto riguarda i social media utilizziamo i servizi di condivisione di Facebook, Twitter e Linkedin.
+
+        Statistiche
+        Per il monitoraggio degli accessi al sito e le statistiche di navigazione utilizziamo Google Analytics, di seguito "GA".
+
+        Il codice di monitoraggio GA fa uso di cookie tecnici per consentirci di analizzare, in forma anonima e aggregata, il traffico degli utenti sul nostro sito (pagine più visitate, nuovi utenti, utenti di ritorno, tipologie di browser e dispositivi, velocità di caricamento e visualizzazione delle pagine ecc.).
+
+        Tieni presente che tale rilevazione statistica degli accessi al nostro sito, così come avviene per gli interessi dell’utente ai fini pubblicitari, è completamente anonima e non comporta alcuna violazione della privacy ma ci consente semplicemente di controllare il traffico complessivo sulle pagine del nostro sito al fine di verificare eventuali problematiche dovute ad eventuali malfunzionamenti o diminuzioni del posizionamento nei principali motori di ricerca.
+
       </dd>
-      <dt class="heading-6">How We Use Your Information</dt>
+      <dt class="heading-6">Disattivazione Cookie</dt>
       <dd>
-        Our web site uses the data we collect for three basic purposes: to operate our business and
-        provide (including improving and personalizing) the services we offer, to send communications,
-        including promotional communications, and to display advertising. In carrying out these
-        purposes, we combine data we collect through the various web site services you use to give you a
-        more seamless, consistent and personalized experience. However, to enhance privacy, we have
-        built in technological and procedural safeguards designed to prevent certain data combinations.
-        For example, we store data we collect from you when you are unauthenticated (not signed in)
-        separately from any account information that directly identifies you, such as your name, email
-        address or phone number.
-      </dd>
-      <dt class="heading-6">Sharing Your Information</dt>
-      <dd>
-        We share your personal data with your consent or as necessary to complete any transaction or
-        provide any service you have requested or authorized. For example, we share your content with
-        third parties when you tell us to do so. When you provide payment data to make a purchase, we
-        will share payment data with banks and other entities that process payment transactions or
-        provide other financial services, and for fraud prevention and credit risk reduction. In
-        addition, we share personal data among our controlled affiliates and subsidiaries. We also share
-        personal data with vendors or agents working on our behalf for the purposes described in this
-        statement. For example, companies we've hired to provide customer service support or assist in
-        protecting and securing our systems and services may need access to personal data in order to
-        provide those functions. In such cases, these companies must abide by our data privacy and
-        security requirements and are not allowed to use personal data they receive from us for any
-        other purpose. We may also disclose personal data as part of a corporate transaction such as a
-        merger
-        or sale of assets.
+        I cookie possono essere disattivati utilizzando le impostazioni del browser.
+        Come detto, la disattivazione dei cookie comporta, per motivi tecnici, la limitazione o l'impossibilità di accedere a tutte le funzionalità del sito, oppure l'impossibilità per le aziende pubblicitarie di mostrarti annunci personalizzati che potrebbero risultare di tuo interesse.
+
+        Ad esempio, disattivare dal browser i cookie di sessione comporta l'impossibilità di collegarsi al sito e di entrare nell'area riservata, e impedisce il funzionamento di alcune applicazioni basate interamente sulle sessioni.
+
+        Talvolta i browser danno la possibilità di disattivare tutti i cookie tranne quelli di sessione, ma anche in questo caso non saranno disponibili varie funzionalità del sito, tra cui, ad esempio, la funzione "ricorda" che ti permette di entrare senza digitare ogni volta utente e password.
+
+        La disattivazione dei cookie impedisce inoltre di mostrarti una sola volta eventuali messaggi di servizio, oppure di sapere se sei un nuovo utente o un utente che ha già visitato il nostro sito.
       </dd>
     </dl>
   </div>
