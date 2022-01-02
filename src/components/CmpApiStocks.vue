@@ -337,7 +337,7 @@ export default {
         const current = this.api[i]
         if (current.name === 'rating') {
           current.stocks.forEach(stock => {
-            if (stock.borsaIt_rating.value === '3' || stock.borsaIt_rating.value === '4') {
+            if (stock.borsaIt_rating.value === 3 || stock.borsaIt_rating.value === 4) {
               this.filters.rank.push(stock)
             }
           })
@@ -378,7 +378,7 @@ export default {
         const current = this.api[i]
         if (current.name === 'volatility') {
           current.stocks.forEach(stock => {
-            if (parseInt(stock.volatility.value) >= 50) {
+            if (parseInt(stock.volatility.value) >= 40) {
               this.filters.volatility.forEach((elem, i) => {
                 if (elem.isin === stock.isin) {
                   elem.volatility = stock.volatility
@@ -440,7 +440,7 @@ export default {
         const current = this.api[i]
         if (current.name === 'mfRsi') {
           current.stocks.forEach(stock => {
-            if (parseInt(stock.milFin_rsi.value) >= 60) {
+            if (parseInt(stock.milFin_rsi.value) >= 50) {
               this.filters.rsiUp.forEach((elem, i) => {
                 if (elem.isin === stock.isin) {
                   elem.milFin_rsi = stock.milFin_rsi
@@ -471,7 +471,7 @@ export default {
         const current = this.api[i]
         if (current.name === 'mfRsi') {
           current.stocks.forEach(stock => {
-            if (parseInt(stock.milFin_rsi.value) <= -60) {
+            if (parseInt(stock.milFin_rsi.value) <= -50) {
               this.filters.rsiDown.forEach((elem, i) => {
                 if (elem.isin === stock.isin) {
                   elem.milFin_rsi = stock.milFin_rsi

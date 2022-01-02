@@ -28,17 +28,17 @@
         Il prezzo corrente (€{{lastPrice}}) è più basso della media a 100 giorni (€{{info.data.mm100days?.value}}).
       </div>
 
-      <div v-if="lastPrice > analisys.data.borsaIt_resistance?.value.replace(',', '.')" class="high">
-        Il prezzo corrente (€{{lastPrice}}) è superiore alla resistenza indicata da Borsa Italiana (€{{analisys.data.borsaIt_resistance?.value.replace(',', '.')}}).
+      <div v-if="lastPrice > analisys.data.borsaIt_resistance?.value" class="high">
+        Il prezzo corrente (€{{lastPrice}}) è superiore alla resistenza indicata da Borsa Italiana (€{{analisys.data.borsaIt_resistance?.value}}).
       </div>
-      <div v-if="lastPrice < analisys.data.borsaIt_support?.value.replace(',', '.')" class="high">
-        Il prezzo corrente (€{{lastPrice}}) è inferiore al supporto indicato da Borsa Italiana (€{{analisys.data.borsaIt_support?.value.replace(',', '.')}}).
+      <div v-if="lastPrice < analisys.data.borsaIt_support?.value" class="high">
+        Il prezzo corrente (€{{lastPrice}}) è inferiore al supporto indicato da Borsa Italiana (€{{analisys.data.borsaIt_support?.value}}).
       </div>
-      <div v-if="lastPrice > analisys.data.teleb_resistance?.value.replace(',', '.')" class="high">
-        Il prezzo corrente (€{{lastPrice}}) è superiore alla resistenza indicata da Teleborsa (€{{analisys.data.teleb_resistance?.value.replace(',', '.')}}).
+      <div v-if="lastPrice > analisys.data.teleb_resistance?.value" class="high">
+        Il prezzo corrente (€{{lastPrice}}) è superiore alla resistenza indicata da Teleborsa (€{{analisys.data.teleb_resistance?.value}}).
       </div>
-      <div v-if="lastPrice < analisys.data.teleb_support?.value.replace(',', '.')" class="high">
-        Il prezzo corrente (€{{lastPrice}}) è inferiore al supporto indicato da Teleborsa (€{{analisys.data.teleb_support?.value.replace(',', '.')}}).
+      <div v-if="lastPrice < analisys.data.teleb_support?.value" class="high">
+        Il prezzo corrente (€{{lastPrice}}) è inferiore al supporto indicato da Teleborsa (€{{analisys.data.teleb_support?.value}}).
       </div>
     </section>
 
@@ -194,7 +194,7 @@ export default {
         .then(data => {
           this.info.data = data
           this.info.status = 'success'
-          this.lastPrice = this.info.data.lastPrice.value.replace(',', '.')
+          this.lastPrice = this.info.data.lastPrice.value
           this.getStockAnalysis()
         })
         .catch(err => {
