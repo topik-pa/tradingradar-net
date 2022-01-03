@@ -34,11 +34,11 @@
       <div v-if="lastPrice < analisys.data.borsaIt_support?.value" class="high">
         Il prezzo corrente (€{{lastPrice}}) è inferiore al supporto indicato da Borsa Italiana (€{{analisys.data.borsaIt_support?.value}}).
       </div>
-      <div v-if="lastPrice > analisys.data.teleb_resistance?.value" class="high">
-        Il prezzo corrente (€{{lastPrice}}) è superiore alla resistenza indicata da Teleborsa (€{{analisys.data.teleb_resistance?.value}}).
+      <div v-if="lastPrice > analisys.data.teleb_tbResistance?.value" class="high">
+        Il prezzo corrente (€{{lastPrice}}) è superiore alla resistenza indicata da Teleborsa (€{{analisys.data.teleb_tbResistance?.value}}).
       </div>
-      <div v-if="lastPrice < analisys.data.teleb_support?.value" class="high">
-        Il prezzo corrente (€{{lastPrice}}) è inferiore al supporto indicato da Teleborsa (€{{analisys.data.teleb_support?.value}}).
+      <div v-if="lastPrice < analisys.data.teleb_tbSupport?.value" class="high">
+        Il prezzo corrente (€{{lastPrice}}) è inferiore al supporto indicato da Teleborsa (€{{analisys.data.teleb_tbSupport?.value}}).
       </div>
     </section>
 
@@ -129,10 +129,10 @@
         </ul>
       </div>
       <div class="source teleb">
-        <h3><a :href="analisys.data.teleb_support?.source ">{{ $t('teleB') }}</a></h3>
+        <h3><a :href="analisys.data.teleb_tbSupport?.source ">{{ $t('teleB') }}</a></h3>
         <ul>
-          <li>{{ $t('support') }}: <strong>{{ analisys.data.teleb_support?.value }}</strong></li>
-          <li>{{ $t('resistance') }}: <strong>{{ analisys.data.teleb_resistance?.value }}</strong></li>
+          <li>{{ $t('support') }}: <strong>{{ analisys.data.teleb_tbSupport?.value }}</strong></li>
+          <li>{{ $t('resistance') }}: <strong>{{ analisys.data.teleb_tbResistance?.value }}</strong></li>
           <li>{{ $t('trend') }}: <strong>{{ analisys.data.teleb_trend?.value }}</strong>
           <br>
           <a :href="analisys.data.teleb_trend?.source" :title="$t('continue')">{{ $t('continue') }}</a>
