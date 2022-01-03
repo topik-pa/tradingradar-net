@@ -250,7 +250,8 @@ export default {
           maxResults: 5,
           status: 'idle',
           source: 'ilSole24Ore',
-          stocks: []
+          stocks: [],
+          order: 'asc'
         },
         {
           id: 11,
@@ -259,7 +260,8 @@ export default {
           maxResults: 5,
           status: 'idle',
           source: 'ilSole24Ore',
-          stocks: []
+          stocks: [],
+          order: 'asc'
         }
       ],
       filters: {
