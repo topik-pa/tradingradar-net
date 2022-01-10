@@ -16,6 +16,11 @@ const state = {
   },
   socials: [
     {
+      name: 'Telegram',
+      url: 'https://t.me/+SrroSvoT8w00ZWM8',
+      class: 'icon-telegram'
+    },
+    {
       name: 'Facebook',
       url: 'https://www.facebook.com/tradingradar',
       class: 'icon-facebook2'
