@@ -9,7 +9,7 @@
         </form>
       </div>
       <div class="social">
-        <a v-for="social in socials" :key="social.name" :href="social.url" class="icon" :class="social.name.toLowerCase()">
+        <a v-for="social in socials" :key="social.name" :href="social.url" class="icon" :title="social.name" :class="social.name.toLowerCase()">
         <i :class="social.class"></i>
         </a >
       </div>
