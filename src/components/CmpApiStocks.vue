@@ -40,6 +40,32 @@
       </div>
     </div>
 
+    <div class="sentiment" :class="status">
+      <div class="sentiment_head">
+        <div class="titles">
+          <h2>{{ $t('sentiment') }}</h2>
+          <h3>{{ $t('sentimentSubtitle') }}</h3>
+          <div class="credits">
+            <a href="https://www.freepik.com/vectors/arrow">Arrow vector created by DrawingMyDiary - www.freepik.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="sentiment_body">
+        <div>
+          <h3>{{ $t('performance') }}</h3>
+          <img v-if="aggregations.performance1M" :src="require(`@/assets/images/gauge_${aggregations.performance1M}.png`)">
+        </div>
+        <div>
+          <h3>{{ $t('volatility') }}</h3>
+          <img v-if="aggregations.volatility" :src="require(`@/assets/images/gauge_${aggregations.volatility}.png`)">
+        </div>
+        <div>
+          <h3>{{ $t('tendency') }}</h3>
+          <img v-if="aggregations.tendency" :src="require(`@/assets/images/gauge_${aggregations.tendency}.png`)">
+        </div>
+      </div>
+    </div>
+
     <div class="filters" :class="status">
       <div class="filters_head">
         <div class="titles">
@@ -140,31 +166,6 @@
       </div>
     </div>
 
-    <div class="sentiment" :class="status">
-      <div class="sentiment_head">
-        <div class="titles">
-          <h2>{{ $t('sentiment') }}</h2>
-          <h3>{{ $t('sentimentSubtitle') }}</h3>
-          <div class="credits">
-            <a href="https://www.freepik.com/vectors/arrow">Arrow vector created by DrawingMyDiary - www.freepik.com</a>
-          </div>
-        </div>
-      </div>
-      <div class="sentiment_body">
-        <div>
-          <h3>{{ $t('performance') }}</h3>
-          <img v-if="aggregations.performance1M" :src="require(`@/assets/images/gauge_${aggregations.performance1M}.png`)">
-        </div>
-        <div>
-          <h3>{{ $t('volatility') }}</h3>
-          <img v-if="aggregations.volatility" :src="require(`@/assets/images/gauge_${aggregations.volatility}.png`)">
-        </div>
-        <div>
-          <h3>{{ $t('tendency') }}</h3>
-          <img v-if="aggregations.tendency" :src="require(`@/assets/images/gauge_${aggregations.tendency}.png`)">
-        </div>
-      </div>
-    </div>
   </section>
 </template>
 
@@ -823,7 +824,7 @@ export default {
     text-align: center;
     padding: 5rem;
     margin-bottom: 4rem;
-    margin-top: 6rem;
+    margin-top: 9rem;
     color: white;
     position: relative;
     background-size: auto;
@@ -839,9 +840,9 @@ export default {
     }
     .titles {
       position: absolute;
-      left: 25%;
-      width: 50%;
-      top: 25%;
+      left: 20%;
+      width: 60%;
+      top: 5%;
       text-shadow: 1px 1px 6px black;
       h2 {
         margin-bottom: 0;
@@ -856,8 +857,8 @@ export default {
     background-image: url(~@/assets/images/lab-min.jpg);
     text-align: center;
     padding: 5rem;
-    margin-bottom: 4rem;
-    margin-top: 6rem;
+    margin-bottom: 2rem;
+    margin-top: 9rem;
     color: white;
     position: relative;
     background-size: auto;
@@ -873,9 +874,9 @@ export default {
     }
     .titles {
       position: absolute;
-      left: 25%;
-      width: 50%;
-      top: 25%;
+      left: 20%;
+      width: 60%;
+      top: 5%;
       text-shadow: 1px 1px 6px black;
       h2 {
         margin-bottom: 0;
@@ -889,13 +890,14 @@ export default {
     display: flex;
     justify-content: space-around;
     div {
-      widows: 20%;
+      width: 23%;
     }
     h3 {
       text-align: center;
     }
     img {
       border: 1px solid $light-gray;
+      width: 100%;
     }
   }
 
