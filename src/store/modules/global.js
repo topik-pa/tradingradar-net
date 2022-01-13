@@ -1,7 +1,7 @@
 const state = {
   project: {
     name: 'tradingradar.net',
-    copyright: '2021',
+    copyright: '2022',
     mobile: 768,
     cookiePolicy: {
       showAfter: 3000,

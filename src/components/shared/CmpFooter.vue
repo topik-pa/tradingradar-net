@@ -34,7 +34,7 @@ export default {
 <style scoped lang="scss">
 .disclaimer {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 10rem;
   padding: 1rem 2rem;
   font-style: italic;
   background-color: $lighter-gray;

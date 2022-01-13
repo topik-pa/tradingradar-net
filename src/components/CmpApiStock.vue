@@ -1,10 +1,17 @@
 <template>
-  <section class="api stock">
+  <section class="api stock" id="stock">
     <div class="banners">
       <div class="banner">
         <h3 v-html="$t('api.stock.info.subtitle')"></h3>
         <h2 v-html="$t('api.stock.info.title')"></h2>
-        <p class="url">{{ $t('api.stock.info.url') }}</p>
+        <div class="media-icons">
+          <img :src="require(`@/assets/images/borsaItaliana.png`)" :alt="$t(`borsaItaliana`)">
+          <img :src="require(`@/assets/images/ilSole24Ore.png`)" :alt="$t(`sol24`)">
+          <img :src="require(`@/assets/images/milanoFinanza.png`)" :alt="$t(`mFinanza`)">
+          <img :src="require(`@/assets/images/soldiOnLine.png`)" :alt="$t(`sol`)">
+          <img :src="require(`@/assets/images/teleBorsa.png`)" :alt="$t(`teleB`)">
+        </div>
+        <!--<p class="url">{{ $t('api.stock.info.url') }}</p> -->
         <p v-html="$t('api.stock.info.desc')" class="desc"></p>
         <!--<router-link class="button secondary" :to="{name: 'Api', params: {id: 'info'}}">{{$t('api.moreInfo')}}</router-link>-->
         <a class="button secondary" href="https://rapidapi.com/marcopavan.mp@gmail.com/api/tradingradar" target="_blank" rel="noopener noreferrer">{{$t('api.moreInfo')}}</a>
@@ -12,7 +19,14 @@
       <div class="banner">
         <h3 v-html="$t('api.stock.analysis.subtitle')"></h3>
         <h2 v-html="$t('api.stock.analysis.title')"></h2>
-        <p class="url">{{ $t('api.stock.analysis.url') }}</p>
+        <div class="media-icons">
+          <img :src="require(`@/assets/images/borsaItaliana.png`)" :alt="$t(`borsaItaliana`)">
+          <img :src="require(`@/assets/images/ilSole24Ore.png`)" :alt="$t(`sol24`)">
+          <img :src="require(`@/assets/images/milanoFinanza.png`)" :alt="$t(`mFinanza`)">
+          <img :src="require(`@/assets/images/soldiOnLine.png`)" :alt="$t(`sol`)">
+          <img :src="require(`@/assets/images/teleBorsa.png`)" :alt="$t(`teleB`)">
+        </div>
+        <!-- <p class="url">{{ $t('api.stock.analysis.url') }}</p> -->
         <p v-html="$t('api.stock.analysis.desc')" class="desc"></p>
         <!--<router-link class="button secondary" :to="{name: 'Api', params: {id: 'analysis'}}">{{$t('api.moreInfo')}}</router-link>-->
         <a class="button secondary" href="https://rapidapi.com/marcopavan.mp@gmail.com/api/tradingradar" target="_blank" rel="noopener noreferrer">{{$t('api.moreInfo')}}</a>
@@ -20,7 +34,13 @@
       <div class="banner">
         <h3 v-html="$t('api.stock.news.subtitle')"></h3>
         <h2 v-html="$t('api.stock.news.title')"></h2>
-        <p class="url">{{ $t('api.stock.news.url') }}</p>
+        <div class="media-icons">
+          <img :src="require(`@/assets/images/borsaItaliana.png`)" :alt="$t(`borsaItaliana`)">
+          <img :src="require(`@/assets/images/milanoFinanza.png`)" :alt="$t(`mFinanza`)">
+          <img :src="require(`@/assets/images/soldiOnLine.png`)" :alt="$t(`sol`)">
+          <img :src="require(`@/assets/images/laRep.png`)" :alt="$t(`laRep`)">
+        </div>
+        <!-- <p class="url">{{ $t('api.stock.news.url') }}</p> -->
         <p v-html="$t('api.stock.news.desc')" class="desc"></p>
         <!--<router-link class="button secondary" :to="{name: 'Api', params: {id: 'analysis'}}">{{$t('api.moreInfo')}}</router-link>-->
         <a class="button secondary" href="https://rapidapi.com/marcopavan.mp@gmail.com/api/tradingradar" target="_blank" rel="noopener noreferrer">{{$t('api.moreInfo')}}</a>
@@ -33,7 +53,7 @@
         {{ letter }}
       </span>
     </div>
-    <div class="stock-list">
+    <div class="stock-list" id="filters">
       <div v-for="stock in filteredStocks" :key="stock.isin" class="stock">
         <router-link :to="{name: 'Stock', params: { isin: stock.isin }}">{{ stock.name }} - {{ stock.code }}</router-link>
       </div>
@@ -92,6 +112,12 @@ export default {
   background-size: cover;
   background-position: center;
   background-image: url(~@/assets/images/banner-2.jpeg);
+
+  .media-icons img{
+    width: 4rem;
+    border: 1px solid $white;
+    margin-right: 1rem;
+  }
 }
 .banner {
   width: 40%;
