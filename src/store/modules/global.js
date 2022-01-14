@@ -16,6 +16,11 @@ const state = {
   },
   socials: [
     {
+      name: 'Patreon',
+      url: 'https://www.patreon.com/bePatron?u=25473579',
+      class: 'icon-patreon'
+    },
+    {
       name: 'Telegram',
       url: 'https://t.me/+SrroSvoT8w00ZWM8',
       class: 'icon-telegram'

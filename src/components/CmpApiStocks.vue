@@ -891,6 +891,7 @@ export default {
     justify-content: space-around;
     div {
       width: 23%;
+      max-width: 20rem;
     }
     h3 {
       text-align: center;
