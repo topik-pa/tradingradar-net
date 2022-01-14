@@ -1,10 +1,10 @@
 <template>
-  <section class="api stocks" :class="selectedAPI.name">
+  <section class="api stocks" :class="selectedAPI.name" id="stocks">
     <div class="stocks_head">
       <div class="stocks_head_left">
         <h3 v-html="$t(`api.stocks.${selectedAPI.name}.subtitle`)"></h3>
         <h2 v-html="$t(`api.stocks.${selectedAPI.name}.title`)"></h2>
-        <p class="url">{{ $t(`api.stocks.${selectedAPI.name}.url`) }}</p>
+        <!-- <p class="url">{{ $t(`api.stocks.${selectedAPI.name}.url`) }}</p> -->
         <p v-html="$t(`api.stocks.${selectedAPI.name}.desc`)" class="desc"></p>
         <!--<router-link class="button secondary" :to="{name: 'Api', params: {id: selectedAPI.name}}">{{$t('api.moreInfo')}}</router-link>-->
         <a class="button secondary" href="https://rapidapi.com/marcopavan.mp@gmail.com/api/tradingradar" target="_blank" rel="noopener noreferrer">{{$t('api.moreInfo')}}</a>
@@ -40,7 +40,33 @@
       </div>
     </div>
 
-    <div class="filters">
+    <div class="sentiment" :class="status">
+      <div class="sentiment_head">
+        <div class="titles">
+          <h2>{{ $t('sentiment') }}</h2>
+          <h3>{{ $t('sentimentSubtitle') }}</h3>
+          <div class="credits">
+            <a href="https://www.freepik.com/vectors/arrow">Arrow vector created by DrawingMyDiary - www.freepik.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="sentiment_body">
+        <div>
+          <h3>{{ $t('performance') }}</h3>
+          <img v-if="aggregations.performance1M" :src="require(`@/assets/images/gauge_${aggregations.performance1M}.png`)">
+        </div>
+        <div>
+          <h3>{{ $t('volatility') }}</h3>
+          <img v-if="aggregations.volatility" :src="require(`@/assets/images/gauge_${aggregations.volatility}.png`)">
+        </div>
+        <div>
+          <h3>{{ $t('tendency') }}</h3>
+          <img v-if="aggregations.tendency" :src="require(`@/assets/images/gauge_${aggregations.tendency}.png`)">
+        </div>
+      </div>
+    </div>
+
+    <div class="filters" :class="status">
       <div class="filters_head">
         <div class="titles">
           <h2>{{ $t('filters') }}</h2>
@@ -139,6 +165,7 @@
         </table>
       </div>
     </div>
+
   </section>
 </template>
 
@@ -150,6 +177,7 @@ export default {
     return {
       selectedApiIndex: undefined,
       selectedAPI: undefined,
+      status: 'loading',
       api: [
         {
           id: 0,
@@ -270,6 +298,11 @@ export default {
         tendency: [],
         rsiUp: [],
         rsiDown: []
+      },
+      aggregations: {
+        performance1M: undefined,
+        volatility: undefined,
+        tendency: undefined
       }
     }
   },
@@ -331,6 +364,11 @@ export default {
             this.filterStocksByTendency()
             this.filterStocksByRsiUp()
             this.filterStocksByRsiDown()
+
+            this.getPerformanceAggregation()
+            this.getVolatilityAggregation()
+            this.getTendencyAggregation()
+            this.status = 'success'
           }
         })
     },
@@ -488,6 +526,86 @@ export default {
           return true
         }
       })
+    },
+    getPerformanceAggregation () {
+      let aggregator = 0
+      const lenght = this.api[0].stocks.length
+      this.api[0].stocks.forEach((obj) => {
+        if (obj.perf1M?.value) {
+          const num = parseFloat(obj.perf1M.value.replace(',', '.').replace('%', ''))
+          aggregator += num
+        }
+      })
+      const perf1MAggregation = parseInt(aggregator / lenght)
+      if (perf1MAggregation > 10) {
+        this.aggregations.performance1M = 5
+      }
+      if (perf1MAggregation > 5 && perf1MAggregation <= 10) {
+        this.aggregations.performance1M = 4
+      }
+      if (perf1MAggregation >= 0 && perf1MAggregation <= 5) {
+        this.aggregations.performance1M = 3
+      }
+      if (perf1MAggregation < 0 && perf1MAggregation >= -5) {
+        this.aggregations.performance1M = 2
+      }
+      if (perf1MAggregation < -5 && perf1MAggregation >= -10) {
+        this.aggregations.performance1M = 1
+      }
+      if (perf1MAggregation < -10) {
+        this.aggregations.performance1M = 0
+      }
+    },
+    getVolatilityAggregation () {
+      let aggregator = 0
+      const length = this.api[3].stocks.length
+      this.api[3].stocks.forEach((obj) => {
+        if (obj.volatility?.value) {
+          aggregator += obj.volatility.value
+        }
+      })
+      const volatilityAggregation = parseInt(aggregator / length)
+
+      this.aggregations.volatility = 0
+      if (volatilityAggregation > 8) {
+        this.aggregations.volatility = 1
+      }
+      if (volatilityAggregation > 16) {
+        this.aggregations.volatility = 2
+      }
+      if (volatilityAggregation > 24) {
+        this.aggregations.volatility = 3
+      }
+      if (volatilityAggregation > 32) {
+        this.aggregations.volatility = 4
+      }
+      if (volatilityAggregation > 40) {
+        this.aggregations.volatility = 5
+      }
+    },
+    getTendencyAggregation () {
+      const tendencyAggregation = this.filters.tendency.length
+      const stockNum = this.api[0].stocks.length
+      const ratio = stockNum / tendencyAggregation
+
+      if (ratio < 32) {
+        this.aggregations.tendency = 0
+      }
+      if (ratio < 16) {
+        this.aggregations.tendency = 1
+      }
+      if (ratio < 8) {
+        this.aggregations.tendency = 2
+      }
+      if (ratio < 4) {
+        this.aggregations.tendency = 3
+      }
+      if (ratio < 2) {
+        this.aggregations.tendency = 4
+      }
+      if (ratio <= 1.6) {
+        this.aggregations.tendency = 5
+      }
     }
   },
   beforeMount () {
@@ -706,7 +824,7 @@ export default {
     text-align: center;
     padding: 5rem;
     margin-bottom: 4rem;
-    margin-top: 6rem;
+    margin-top: 9rem;
     color: white;
     position: relative;
     background-size: auto;
@@ -722,12 +840,75 @@ export default {
     }
     .titles {
       position: absolute;
-      left: 25%;
-      width: 50%;
-      top: 25%;
+      left: 20%;
+      width: 60%;
+      top: 5%;
       text-shadow: 1px 1px 6px black;
       h2 {
         margin-bottom: 0;
+      }
+      h3 {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  .sentiment_head {
+    background-image: url(~@/assets/images/lab-min.jpg);
+    text-align: center;
+    padding: 5rem;
+    margin-bottom: 2rem;
+    margin-top: 9rem;
+    color: white;
+    position: relative;
+    background-size: auto;
+    background-position-y: center;
+    &::before {
+      content: ' ';
+      background: rgba(0,0,0,0.6);
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      left: 25%;
+    }
+    .titles {
+      position: absolute;
+      left: 20%;
+      width: 60%;
+      top: 5%;
+      text-shadow: 1px 1px 6px black;
+      h2 {
+        margin-bottom: 0;
+      }
+      h3 {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+  .sentiment_body {
+    display: flex;
+    justify-content: space-around;
+    div {
+      width: 23%;
+      max-width: 20rem;
+    }
+    h3 {
+      text-align: center;
+    }
+    img {
+      border: 1px solid $light-gray;
+      width: 100%;
+    }
+  }
+
+  .sentiment {
+    .credits {
+      text-align: center;
+      font-style: italic;
+      font-size: 90%;
+      a {
+        color: $white
       }
     }
   }

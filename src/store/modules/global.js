@@ -1,7 +1,7 @@
 const state = {
   project: {
     name: 'tradingradar.net',
-    copyright: '2021',
+    copyright: '2022',
     mobile: 768,
     cookiePolicy: {
       showAfter: 3000,
@@ -15,6 +15,11 @@ const state = {
     email: 'marcopavan.mp@gmail.com'
   },
   socials: [
+    {
+      name: 'Patreon',
+      url: 'https://www.patreon.com/bePatron?u=25473579',
+      class: 'icon-patreon'
+    },
     {
       name: 'Telegram',
       url: 'https://t.me/+SrroSvoT8w00ZWM8',

@@ -38,12 +38,15 @@
   "sol24": "Il Sole 24 Ore",
   "borsaItaliana": "Borsa Italiana",
   "teleB": "Teleborsa",
+  "laRep": "La Repubblica Affari & Finanza",
   "sol": "SoldiOnLine",
   "ratingEdges": "Rating [A-E]",
   "riskEdges": "Risk [0-100]",
   "from": "da ",
   "filters": "Filtri",
   "filtersSubtitle": "Titoli filtrati in base alle analisi sopra riportate",
+  "sentiment": "Sentiment",
+  "sentimentSubtitle": "Sentiment di Borsa in base alle analisi raccolte",
   "overBuy": "Ipercomprati",
   "overSell": "Ipervenduti",
   "tendency": "Tendenza",
@@ -62,8 +65,8 @@
     "privacy": "Privacy"
   },
   "api": {
-    "moreInfo": "Come utilizzare le API (RapidAPI)",
-    "selectTitle": "Seleziona un titolo del FSTE MIB",
+    "moreInfo": "Accedi alle API di tradingradar.net (su RapidAPI)",
+    "selectTitle": "Seleziona un titolo del FTSE MIB",
     "selectTitleSub": "per avere un esempio dei dati forniti dalle nostre API",
     "stocks": {
       "feature1": "Dati aggiornati su base giornaliera",
@@ -205,21 +208,21 @@
     },
     "stock": {
       "info": {
-        "title": "<strong>Informazioni</strong> sui titoli del FSTE MIB",
+        "title": "<strong>Informazioni</strong> sui titoli del FSTE MIB da...",
         "subtitle": "Ottieni <em>real time</em> <strong>informazioni</strong> su un titolo del FTSE MIB",
         "url": "/api/info/[ISIN]",
         "desc": "Ottieni <strong>informazioni dai principali media online</strong> ed aggiornate in tempo reale.<br>&#8595;&#8595;&#8595; <em>Seleziona un titolo</em> nella sezione sotto per avere un esempio dei dati forniti dalle nostre API.",
         "infoUrl": "#"
       },
       "analysis": {
-        "title": "<strong>Analisi</strong> sui titoli del FSTE MIB",
+        "title": "<strong>Analisi</strong> sui titoli del FSTE MIB da...",
         "subtitle": "Ottieni <em>real time</em> <strong>analisi tecniche</strong> su un titolo del FTSE MIB",
         "url": "/api/analysis/[ISIN]",
         "desc": "Ottieni <strong>analisi tecniche dai principali media online</strong> ed aggiornate in tempo reale<br>&#8595;&#8595;&#8595; <em>Seleziona un titolo</em> nella sezione sotto per avere un esempio dei dati forniti dalle nostre API.",
         "infoUrl": "#"
       },
       "news": {
-        "title": "<strong>Rassegna stampa</strong> dei titoli del FSTE MIB",
+        "title": "<strong>Rassegna stampa</strong> dei titoli del FSTE MIB da...",
         "subtitle": "Ottieni <em>real time</em> <strong>una rassegna stampa</strong> su un titolo del FTSE MIB",
         "url": "/api/news/[ISIN]",
         "desc": "Ottieni una <strong>rassegna stampa ottenuta dai principali media online</strong> ed aggiornata in tempo reale<br>&#8595;&#8595;&#8595; <em>Seleziona un titolo</em> nella sezione sotto per avere un esempio dei dati forniti dalle nostre API.",
