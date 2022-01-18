@@ -166,6 +166,39 @@
       </div>
     </div>
 
+    <div class="patreon" id="patreon">
+        <div class="patreon_head">
+          <div class="titles">
+            <h2>{{ $t('newsletter') }}</h2>
+            <h3>{{ $t('newsletterSubtitle') }}</h3>
+          </div>
+        </div>
+        <div class="patreon_body">
+          <div>
+            <p>
+              <span>1</span> Newsletter quotidiana con indicazione dei titoli del FTSE MIB che hanno superato le <strong>medie mobili</strong>.
+            </p>
+            <p>
+              Ottieni la lista dei titoli che hanno superato le medie a 20gg, 40gg e 100gg.
+            </p>
+          </div>
+          <div>
+            <p>
+              <span>2</span> Newsletter quotidiana con indicazione dei titoli del FTSE MIB che hanno superato le <strong>medie mobili</strong>, i <strong>supporti</strong> e le <strong>resistenze</strong>.
+            </p>
+            <p>
+              Ottieni la lista dei titoli che hanno superato le medie a 20gg, 40gg e 100gg, e i titoli che hanno superato i livelli di supporto e resistenza secondo le analisi di <em>Teleborsa</em> e <em>Borsa Italiana</em>
+            </p>
+          </div>
+        </div>
+        <p>
+          <a href="https://www.patreon.com/bePatron?u=25473579">Diventa sostenitore Patreon</a> e scegli a quale newsletter abbonarti
+          <a href="https://www.patreon.com/bePatron?u=25473579">
+          <img :src="require(`@/assets/images/Digital-Patreon-Wordmark_WhiteOnFieryCoral-Sm.jpg`)" :alt="$t('patreon')">
+          </a>
+        </p>
+    </div>
+
   </section>
 </template>
 
@@ -944,6 +977,73 @@ export default {
     }
   }
 }
+
+.patreon {
+
+  > p {
+    text-align: center;
+    margin: 4rem;
+    a {
+      display: block;
+      margin-top: 1rem;
+    }
+  }
+
+  &_body {
+    display: flex;
+    justify-content: space-between;
+
+    div {
+      width: 50%;
+      text-align: center;
+      font-size: $font-size-big;
+      line-height: 110%;
+      p {
+        margin-top: 1rem;
+        span {
+          font-size: 200%;
+          color: $white;
+          background: $lighter-gray;
+          padding: 0.7rem;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+.patreon_head {
+    text-align: center;
+    padding: 6rem;
+    margin-bottom: 2rem;
+    margin-top: 9rem;
+    color: white;
+    position: relative;
+    background-color: #EF404F;
+    &::before {
+      content: ' ';
+      background: rgba(0,0,0,0.6);
+      position: absolute;
+      width: 60%;
+      height: 100%;
+      top: 0;
+      left: 20%;
+    }
+    .titles {
+      position: absolute;
+      left: 20%;
+      width: 60%;
+      top: 5%;
+      text-shadow: 1px 1px 6px black;
+      h2 {
+        margin-bottom: 0;
+      }
+      h3 {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
 @media screen and (max-width: 1280px) {
   .stocks_list > div {
     width: 22%;
