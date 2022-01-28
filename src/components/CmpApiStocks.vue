@@ -129,6 +129,24 @@
         </table>
 
         <table class="filter">
+          <caption>{{ $t('tendency') }} {{ $t('sol24') }}</caption>
+          <thead>
+            <tr>
+              <th>{{ $t('stock') }}</th>
+              <th>{{ $t('shortTendency') }}</th>
+              <th>{{ $t('mediumTendency') }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="stock in filters.tendency2" :key="stock.isin">
+              <td><router-link :to="{name: 'Stock', params: {isin: stock.isin}}">{{ stock.name }}</router-link></td>
+              <td>{{ stock.sol24_shortTendency?.value }}</td>
+              <td>{{ stock.sol24_mediumTendency?.value }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="filter">
           <caption>{{ $t('overBuy') }}</caption>
           <thead>
             <tr>
@@ -328,6 +346,7 @@ export default {
         rank: [],
         volatility: [],
         tendency: [],
+        tendency2: [],
         rsiUp: [],
         rsiDown: []
       },
@@ -476,6 +495,7 @@ export default {
             this.filterStocksByRank()
             this.filterStocksByVolatility()
             this.filterStocksByTendency()
+            this.filterStocksByTendency2()
             this.filterStocksByRsiUp()
             this.filterStocksByRsiDown()
 
@@ -574,6 +594,37 @@ export default {
         }
       }
       this.filters.tendency = this.filters.tendency.filter((elem) => {
+        if (elem.sol24_mediumTendency && elem.sol24_shortTendency) {
+          return true
+        }
+      })
+    },
+    filterStocksByTendency2 () {
+      for (let i = 0; i < this.api.length; i++) {
+        const current = this.api[i]
+        if (current.name === 'shortTendency') {
+          current.stocks.forEach(stock => {
+            if (stock.sol24_shortTendency.value.includes('Ribasso')) {
+              this.filters.tendency2.push(stock)
+            }
+          })
+        }
+      }
+      for (let i = 0; i < this.api.length; i++) {
+        const current = this.api[i]
+        if (current.name === 'mediumTendency') {
+          current.stocks.forEach(stock => {
+            if (stock.sol24_mediumTendency.value.includes('Ribasso')) {
+              this.filters.tendency2.forEach((elem) => {
+                if (elem.isin === stock.isin) {
+                  elem.sol24_mediumTendency = stock.sol24_mediumTendency
+                }
+              })
+            }
+          })
+        }
+      }
+      this.filters.tendency2 = this.filters.tendency2.filter((elem) => {
         if (elem.sol24_mediumTendency && elem.sol24_shortTendency) {
           return true
         }
@@ -702,9 +753,7 @@ export default {
       const stockNum = this.api[0].stocks.length
       const ratio = stockNum / tendencyAggregation
 
-      if (ratio < 32) {
-        this.aggregations.tendency = 0
-      }
+      this.aggregations.tendency = 0
       if (ratio < 16) {
         this.aggregations.tendency = 1
       }
