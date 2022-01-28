@@ -29,7 +29,7 @@
     <div class="stocks_body">
       <div class="stocks_list">
         <div v-for="obj in api" :key="obj.id" :class="[{'active': obj.active}, obj.status]">
-          <h3 @click="gotToStockAPI(obj.id)" :class="obj.name">{{ $t(`api.stocks.${obj.name}.label`) }}</h3>
+          <h3 @click="gotToStockAPI(obj.id)" :class="obj.name" :id="obj.name">{{ $t(`api.stocks.${obj.name}.label`) }}</h3>
           <div class="stocks_list_wrap">
             <div v-for="stock in obj.stocks" :key="stock.isin" class="stocks_listitem">
               <router-link :to="{name: 'Stock', params: {isin: stock.isin}}">{{ stock.name }}</router-link>
@@ -53,15 +53,15 @@
       <div class="sentiment_body">
         <div>
           <h3>{{ $t('performance') }}</h3>
-          <img v-if="aggregations.performance1M" :src="require(`@/assets/images/gauge_${aggregations.performance1M}.png`)">
+          <img v-if="aggregations.performance1M !== undefined" :src="require(`@/assets/images/gauge_${aggregations.performance1M}.png`)">
         </div>
         <div>
           <h3>{{ $t('volatility') }}</h3>
-          <img v-if="aggregations.volatility" :src="require(`@/assets/images/gauge_${aggregations.volatility}.png`)">
+          <img v-if="aggregations.volatility !== undefined" :src="require(`@/assets/images/gauge_${aggregations.volatility}.png`)">
         </div>
         <div>
           <h3>{{ $t('tendency') }}</h3>
-          <img v-if="aggregations.tendency" :src="require(`@/assets/images/gauge_${aggregations.tendency}.png`)">
+          <img v-if="aggregations.tendency !== undefined" :src="require(`@/assets/images/gauge_${aggregations.tendency}.png`)">
         </div>
       </div>
     </div>
@@ -219,8 +219,7 @@ export default {
           maxResults: 5,
           status: 'idle',
           source: 'borsaItaliana',
-          stocks: [],
-          active: true
+          stocks: []
         },
         {
           id: 1,
@@ -370,6 +369,88 @@ export default {
       this.selectedAPI = this.api[this.selectedApiIndex]
       this.api[this.selectedApiIndex].active = true
     },
+    setSelectedApi () {
+      if (location.hash) {
+        const hash = location.hash
+        switch (hash) {
+        case '#perf1M':
+          this.selectedApiIndex = 0
+          this.selectedAPI = this.api[this.selectedApiIndex]
+          this.selectedAPI.active = true
+          break
+        case '#perf6M':
+          this.selectedApiIndex = 1
+          this.selectedAPI = this.api[this.selectedApiIndex]
+          this.selectedAPI.active = true
+          break
+        case '#perf1Y':
+          this.selectedApiIndex = 2
+          this.selectedAPI = this.api[this.selectedApiIndex]
+          this.selectedAPI.active = true
+          break
+        case '#volatility':
+          this.selectedApiIndex = 3
+          this.selectedAPI = this.api[this.selectedApiIndex]
+          this.selectedAPI.active = true
+          break
+        case '#rsi':
+          this.selectedApiIndex = 4
+          this.selectedAPI = this.api[this.selectedApiIndex]
+          this.selectedAPI.active = true
+          break
+        case '#rating':
+          this.selectedApiIndex = 5
+          this.selectedAPI = this.api[this.selectedApiIndex]
+          this.selectedAPI.active = true
+          break
+        case '#mfRisk':
+          this.selectedApiIndex = 6
+          this.selectedAPI = this.api[this.selectedApiIndex]
+          this.selectedAPI.active = true
+          break
+        case '#mfRsi':
+          this.selectedApiIndex = 7
+          this.selectedAPI = this.api[this.selectedApiIndex]
+          this.selectedAPI.active = true
+          break
+        case '#mfRanking':
+          this.selectedApiIndex = 8
+          this.selectedAPI = this.api[this.selectedApiIndex]
+          this.selectedAPI.active = true
+          break
+        case '#divYield':
+          this.selectedApiIndex = 9
+          this.selectedAPI = this.api[this.selectedApiIndex]
+          this.selectedAPI.active = true
+          break
+        case '#shortTendency':
+          this.selectedApiIndex = 10
+          this.selectedAPI = this.api[this.selectedApiIndex]
+          this.selectedAPI.active = true
+          break
+        case '#mediumTendency':
+          this.selectedApiIndex = 11
+          this.selectedAPI = this.api[this.selectedApiIndex]
+          this.selectedAPI.active = true
+          break
+        default:
+          break
+        }
+      } else {
+        this.selectedApiIndex = 0
+        this.selectedAPI = this.api[this.selectedApiIndex]
+        this.selectedAPI.active = true
+      }
+    },
+    scrollToAPI () {
+      if (location.hash) {
+        // const elem = document.getElementById(location.hash.replace('#', ''))
+        const elem = document.querySelector('.stocks_body')
+        setTimeout(() => {
+          elem.scrollIntoView({ behavior: 'smooth' })
+        }, 1000)
+      }
+    },
     getStocksAnalysis (index = 0) {
       const api = this.api[index]
       if (!api) return
@@ -513,7 +594,7 @@ export default {
         const current = this.api[i]
         if (current.name === 'mfRsi') {
           current.stocks.forEach(stock => {
-            if (parseInt(stock.milFin_rsi.value) >= 50) {
+            if (parseInt(stock.milFin_rsi.value) >= 55) {
               this.filters.rsiUp.forEach((elem, i) => {
                 if (elem.isin === stock.isin) {
                   elem.milFin_rsi = stock.milFin_rsi
@@ -544,7 +625,7 @@ export default {
         const current = this.api[i]
         if (current.name === 'mfRsi') {
           current.stocks.forEach(stock => {
-            if (parseInt(stock.milFin_rsi.value) <= -50) {
+            if (parseInt(stock.milFin_rsi.value) <= 45) {
               this.filters.rsiDown.forEach((elem, i) => {
                 if (elem.isin === stock.isin) {
                   elem.milFin_rsi = stock.milFin_rsi
@@ -600,19 +681,19 @@ export default {
       const volatilityAggregation = parseInt(aggregator / length)
 
       this.aggregations.volatility = 0
-      if (volatilityAggregation > 8) {
+      if (volatilityAggregation > 7) {
         this.aggregations.volatility = 1
       }
-      if (volatilityAggregation > 16) {
+      if (volatilityAggregation > 14) {
         this.aggregations.volatility = 2
       }
-      if (volatilityAggregation > 24) {
+      if (volatilityAggregation > 21) {
         this.aggregations.volatility = 3
       }
-      if (volatilityAggregation > 32) {
+      if (volatilityAggregation > 28) {
         this.aggregations.volatility = 4
       }
-      if (volatilityAggregation > 40) {
+      if (volatilityAggregation > 35) {
         this.aggregations.volatility = 5
       }
     },
@@ -643,9 +724,11 @@ export default {
   },
   beforeMount () {
     this.getStocksAnalysis(0)
-    this.selectedApiIndex = 0
-    this.selectedAPI = this.api[this.selectedApiIndex]
+    this.setSelectedApi()
     this.apiLenght = this.api.length
+  },
+  mounted () {
+    this.scrollToAPI()
   }
 }
 </script>
