@@ -189,28 +189,46 @@
           <div class="titles">
             <h2>{{ $t('newsletter') }}</h2>
             <h3>{{ $t('newsletterSubtitle') }}</h3>
+            <h4><a href="https://www.patreon.com/bePatron?u=25473579">Sostienimi su Patreon</a> per ricevere sulla tua mail i segnali operativi</h4>
           </div>
         </div>
+
+        <h2><span>1</span> Ottieni segnali operativi sulle medie mobili</h2>
         <div class="patreon_body">
           <div>
+            <h3>Segnale <strong>bullish</strong>: Golden Cross</h3>
             <p>
-              <span>1</span> Newsletter quotidiana con indicazione dei titoli del FTSE MIB che hanno superato le <strong>medie mobili</strong>.
+              La <a href="https://academy.binance.com/it/articles/golden-cross-and-death-cross-explained#header-1" target="_blank" rel="noopener noreferrer">Golden Cross</a> si verifica quando una media a breve termine <strong>incrocia verso l'alto</strong> una media a lungo termine.
             </p>
+            <img :src="require(`@/assets/images/gc-min.png`)" alt="Golden Cross">
+          </div>
+          <div>
+            <h3>Segnale <strong>bearish</strong>: Death Cross</h3>
             <p>
-              Ottieni la lista dei titoli che hanno superato le medie a 20gg, 40gg e 100gg.
+              La <a href="https://academy.binance.com/it/articles/golden-cross-and-death-cross-explained#header-2" target="_blank" rel="noopener noreferrer">Death Cross</a> si verifica quando una media a breve termine <strong>incrocia verso il basso</strong> una media a lungo termine.
+            </p>
+            <img :src="require(`@/assets/images/dc-min.png`)" alt="Death Cross">
+          </div>
+        </div>
+
+        <h2><span>2</span> Ottieni segnali operativi sulle medie e sui livelli di Supporto e Resistenza</h2>
+        <div class="patreon_body">
+          <div>
+            <h3>Segnale <strong>bullish</strong>: violazione della Resistenza</h3>
+            <p>
+              La violazione della <a href="http://www.traderpedia.it/wiki/index.php/Resistenza" target="_blank" rel="noopener noreferrer">Resistenza</a> si verifica quando il prezzo attuale <strong>incrocia verso l'alto</strong> la Resistenza.
             </p>
           </div>
           <div>
+            <h3>Segnale <strong>bearish</strong>: violazione del Supporto</h3>
             <p>
-              <span>2</span> Newsletter quotidiana con indicazione dei titoli del FTSE MIB che hanno superato le <strong>medie mobili</strong>, i <strong>supporti</strong> e le <strong>resistenze</strong>.
-            </p>
-            <p>
-              Ottieni la lista dei titoli che hanno superato le medie a 20gg, 40gg e 100gg, e i titoli che hanno superato i livelli di supporto e resistenza secondo le analisi di <em>Teleborsa</em> e <em>Borsa Italiana</em>
+              La violazione del <a href="http://www.traderpedia.it/wiki/index.php/Supporto" target="_blank" rel="noopener noreferrer">Supporto</a> si verifica quando il prezzo attuale <strong>incrocia verso il basso</strong> il Supporto.
             </p>
           </div>
         </div>
-        <p>
-          <a href="https://www.patreon.com/bePatron?u=25473579">Diventa sostenitore Patreon</a> e scegli a quale newsletter abbonarti
+
+        <p class="call">
+          <a href="https://www.patreon.com/bePatron?u=25473579">Diventa sostenitore Patreon</a> per ricevere i segnali generati
           <a href="https://www.patreon.com/bePatron?u=25473579">
           <img :src="require(`@/assets/images/Digital-Patreon-Wordmark_WhiteOnFieryCoral-Sm.jpg`)" :alt="$t('patreon')">
           </a>
@@ -542,7 +560,7 @@ export default {
         const current = this.api[i]
         if (current.name === 'perf1M') {
           current.stocks.forEach(stock => {
-            if (parseInt(stock.perf1M.value) >= 10) {
+            if (parseInt(stock.perf1M.value) >= 8 || parseInt(stock.perf1M.value) <= 8) {
               this.filters.volatility.push(stock)
             }
           })
@@ -552,7 +570,7 @@ export default {
         const current = this.api[i]
         if (current.name === 'volatility') {
           current.stocks.forEach(stock => {
-            if (parseInt(stock.volatility.value) >= 40) {
+            if (parseInt(stock.volatility.value) >= 35) {
               this.filters.volatility.forEach((elem, i) => {
                 if (elem.isin === stock.isin) {
                   elem.volatility = stock.volatility
@@ -1086,8 +1104,7 @@ export default {
   }
 
   table.filter {
-    width: 30%;
-    margin-bottom: 4rem;
+    margin: 0 1rem 4rem;
     caption {
       padding: .5rem 0;
       font-size: 1.2rem;
@@ -1112,9 +1129,22 @@ export default {
 
 .patreon {
 
+  h2 {
+    text-align: center;
+    span {
+      border: 1px solid black;
+      color: #EF404F;
+    }
+  }
+
+  h4 a {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
   > p {
     text-align: center;
-    margin: 4rem;
+    font-size: $font-size-bigger;
     a {
       display: block;
       margin-top: 1rem;
@@ -1124,22 +1154,31 @@ export default {
   &_body {
     display: flex;
     justify-content: space-between;
-
+    flex-wrap: wrap;
+    padding: 0 2rem;
     div {
-      width: 50%;
       text-align: center;
       font-size: $font-size-big;
       line-height: 110%;
+      margin-bottom: 3rem;
+      width: 48%;
       p {
         margin-top: 1rem;
         span {
           font-size: 200%;
           color: $white;
           background: $lighter-gray;
-          padding: 0.7rem;
+          padding: 1.4rem;
+          margin: 1rem;
           display: inline-block;
         }
       }
+    }
+    img {
+      width: 90%;
+      padding: 0rem;
+      border: 1px solid gray;
+      margin: 2rem;
     }
   }
 }
@@ -1156,10 +1195,10 @@ export default {
       content: ' ';
       background: rgba(0,0,0,0.6);
       position: absolute;
-      width: 60%;
+      width: 80%;
       height: 100%;
       top: 0;
-      left: 20%;
+      left: 10%;
     }
     .titles {
       position: absolute;
@@ -1204,6 +1243,9 @@ export default {
   }
   .stocks_list > div {
     width: 30%;
+  }
+  .patreon_body div {
+    width: 100%;
   }
   @media screen and (max-width: 414px) {
     .stocks_head {
