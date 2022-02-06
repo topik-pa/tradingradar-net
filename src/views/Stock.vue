@@ -120,6 +120,15 @@
           <li>{{ $t('mediumTendency') }}: <strong>{{ analisys.data.sol24_mediumTendency?.value }}</strong></li>
         </ul>
       </div>
+
+      <div class="source sol">
+        <h3><a :href="analisys.data.sol_lastTargetPrice?.source ">{{ $t('sol') }}</a></h3>
+        <ul>
+          <li>{{ $t('targetPrice') }}: <strong>{{ analisys.data.sol_lastTargetPrice?.value }}</strong></li>
+          <li>{{ $t('judgement') }}: <strong>{{ analisys.data.sol_lastJudgment?.value }}</strong></li>
+        </ul>
+      </div>
+
       <div class="source milFin">
         <h3><a :href="analisys.data.milFin_mfRanking?.source ">{{ $t('mFinanza') }}</a></h3>
         <ul>
@@ -298,9 +307,13 @@ export default {
 
 .analisys {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-wrap: wrap;
   .borsaIt h3::before {
     background-image: url(~@/assets/images/borsaItaliana.png);
+  }
+  .sol h3::before {
+    background-image: url(~@/assets/images/soldiOnLine.png);
   }
   .sol24 h3::before {
     background-image: url(~@/assets/images/ilSole24Ore.png);
@@ -339,7 +352,8 @@ export default {
   }
 }
 .source {
-  width: 23%;
+  width: 30%;
+  margin-bottom: 4rem;
 }
 
 .news {

@@ -52,6 +52,8 @@
   "overBuy": "Ipercomprati",
   "overSell": "Ipervenduti",
   "tendency": "Tendenza",
+  "targetPrice": "Prezzo obiettivo",
+  "judgement": "Giudizio",
   "menu": {
     "home": "Home",
     "about": "About",
