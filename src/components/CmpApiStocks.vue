@@ -181,6 +181,23 @@
             </tr>
           </tbody>
         </table>
+
+        <table class="filter">
+          <caption>{{ $t('raccomandations') }}</caption>
+          <thead>
+            <tr>
+              <th>{{ $t('stock') }}</th>
+              <th>{{ $t('lastJudgment') }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="stock in filters.judgment" :key="stock.isin">
+              <td><router-link :to="{name: 'Stock', params: {isin: stock.isin}}">{{ stock.name }}</router-link></td>
+              <td>{{ stock.lastJudgment?.value }}</td>
+            </tr>
+          </tbody>
+        </table>
+
       </div>
     </div>
 
@@ -358,6 +375,15 @@ export default {
           source: 'ilSole24Ore',
           stocks: [],
           order: 'asc'
+        },
+        {
+          id: 11,
+          name: 'lastJudgment',
+          key: 'lastJudgment',
+          maxResults: 5,
+          status: 'idle',
+          source: 'soldiOnLine',
+          stocks: []
         }
       ],
       filters: {
@@ -366,7 +392,8 @@ export default {
         tendency: [],
         tendency2: [],
         rsiUp: [],
-        rsiDown: []
+        rsiDown: [],
+        judgment: []
       },
       aggregations: {
         performance1M: undefined,
@@ -470,6 +497,11 @@ export default {
           this.selectedAPI = this.api[this.selectedApiIndex]
           this.selectedAPI.active = true
           break
+        case '#lastJudgment':
+          this.selectedApiIndex = 12
+          this.selectedAPI = this.api[this.selectedApiIndex]
+          this.selectedAPI.active = true
+          break
         default:
           break
         }
@@ -516,10 +548,12 @@ export default {
             this.filterStocksByTendency2()
             this.filterStocksByRsiUp()
             this.filterStocksByRsiDown()
+            this.filterStocksByJudgment()
 
             this.getPerformanceAggregation()
             this.getVolatilityAggregation()
             this.getTendencyAggregation()
+
             this.status = 'success'
           }
         })
@@ -710,6 +744,18 @@ export default {
         }
       })
     },
+    filterStocksByJudgment () {
+      for (let i = 0; i < this.api.length; i++) {
+        const current = this.api[i]
+        if (current.name === 'lastJudgment') {
+          current.stocks.forEach(stock => {
+            if (stock.lastJudgment.value.toLowerCase().includes('buy') || stock.lastJudgment.value.toLowerCase().includes('top') || stock.lastJudgment.value.toLowerCase().includes('sell')) {
+              this.filters.judgment.push(stock)
+            }
+          })
+        }
+      }
+    },
     getPerformanceAggregation () {
       let aggregator = 0
       const lenght = this.api[0].stocks.length
@@ -837,6 +883,9 @@ export default {
   }
   &.mediumTendency &_head  {
     background-position: 88% 60%;
+  }
+  &.lastJudgment &_head  {
+    background-position: 96% 60%;
   }
   &_head {
     color: $white;
@@ -970,6 +1019,9 @@ export default {
         }
         &.mediumTendency::after {
           background-image: url(~@/assets/images/ilSole24Ore.png);
+        }
+        &.lastJudgment::after {
+          background-image: url(~@/assets/images/soldiOnLine.png);
         }
       }
     }
