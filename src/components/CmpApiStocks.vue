@@ -272,7 +272,8 @@ export default {
           maxResults: 5,
           status: 'idle',
           source: 'borsaItaliana',
-          stocks: []
+          stocks: [],
+          order: 'desc'
         },
         {
           id: 1,
@@ -281,7 +282,8 @@ export default {
           maxResults: 5,
           status: 'idle',
           source: 'borsaItaliana',
-          stocks: []
+          stocks: [],
+          order: 'desc'
         },
         {
           id: 2,
@@ -290,7 +292,8 @@ export default {
           maxResults: 5,
           status: 'idle',
           source: 'borsaItaliana',
-          stocks: []
+          stocks: [],
+          order: 'desc'
         },
         {
           id: 3,
@@ -299,7 +302,8 @@ export default {
           maxResults: 5,
           status: 'idle',
           source: 'borsaItaliana',
-          stocks: []
+          stocks: [],
+          order: 'desc'
         },
         {
           id: 4,
@@ -308,7 +312,8 @@ export default {
           maxResults: 5,
           status: 'idle',
           source: 'borsaItaliana',
-          stocks: []
+          stocks: [],
+          order: 'desc'
         },
         {
           id: 5,
@@ -317,7 +322,8 @@ export default {
           maxResults: 5,
           status: 'idle',
           source: 'borsaItaliana',
-          stocks: []
+          stocks: [],
+          order: 'desc'
         },
         {
           id: 6,
@@ -326,7 +332,8 @@ export default {
           maxResults: 5,
           status: 'idle',
           source: 'milanoFinanza',
-          stocks: []
+          stocks: [],
+          order: 'desc'
         },
         {
           id: 7,
@@ -335,7 +342,8 @@ export default {
           maxResults: 5,
           status: 'idle',
           source: 'milanoFinanza',
-          stocks: []
+          stocks: [],
+          order: 'desc'
         },
         {
           id: 8,
@@ -354,7 +362,8 @@ export default {
           maxResults: 5,
           status: 'idle',
           source: 'milanoFinanza',
-          stocks: []
+          stocks: [],
+          order: 'desc'
         },
         {
           id: 10,
@@ -524,7 +533,7 @@ export default {
       const api = this.api[index]
       if (!api) return
       api.status = 'loading'
-      const order = api.order || 'desc'
+      const order = api.order || ''
       fetch(`${settings.apiEndpoint}/api/stocks/${api.name}?order=${order}`, {
         method: 'GET'
       })
