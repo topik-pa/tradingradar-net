@@ -28,6 +28,9 @@
   "stock": "Titolo",
   "mediumTendency": "Tendenza medio periodo",
   "shortTendency": "Tendenza breve periodo",
+  "lastJudgment": "Giudizio",
+  "raccomandations": "Raccomandazioni",
+  "target": "Target price",
   "trend": "Trend",
   "profile": "Profilo",
   "minMax": "Minimi e massimi",
@@ -208,6 +211,17 @@
         "url": "/api/stocks/mediumTendency",
         "source": "Il Sole 24 Ore",
         "sourceUrl": "https://www.ilsole24ore.com"
+      },
+      "lastJudgment": {
+        "param": "lastJudgment",
+        "key": "sol_lastJudgment",
+        "label": "Raccomandazione",
+        "subtitle": "Scopri la <strong>raccomandazione operativa</strong> delle Banche di Affari",
+        "title": "<strong>Giudizio</strong> secondo gli analisti delle principali Banche di Affari",
+        "desc": "Cosa ne pensano i principali analisti del settore? Aggiungi la loro analisi alle tue considerazioni.<br>I dati sono aggiornati su base giornaliera e gestibili attraverso funzioni di filtraggio, ordinamento e paginazione",
+        "url": "/api/stocks/lastJudgment",
+        "source": "Soldi on Line",
+        "sourceUrl": "https://www.soldionline.it/"
       }
     },
     "stock": {
